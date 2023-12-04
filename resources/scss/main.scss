@@ -1,5 +1,5 @@
 // Bootstrap 5
-@use "./bootstrap_overrides" as *;
+@use "./bootstrap-overrides" as *;
 
 // Theme
 @use "./theme/theme" as *;
@@ -18,6 +18,3 @@
 // @import "./fontawesome/bordered-pulled";
 // @import "./fontawesome/fixed-width";
 // @import "./fontawesome/stacked";
-
-// Tom-Select
-@import "./tom-select/tom-select.bootstrap5";

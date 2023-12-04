@@ -18,8 +18,8 @@ export default defineConfig(() => ({
   },
   build: {
     emptyOutDir: false,
-    outDir: './public/dist',
-    assetsDir: '../assets',
+    outDir: './public',
+    assetsDir: 'assets',
     manifest: true,
     rollupOptions: {
       input: './resources/main.js',
@@ -27,8 +27,8 @@ export default defineConfig(() => ({
   },
 
   server: {
-    origin: 'http://localhost:3479',
-    port: '3479',
+    origin: 'http://localhost:3483',
+    port: '3483',
     strictPort: true,
   },
 

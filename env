@@ -148,8 +148,8 @@
 
 # VITE_AUTO_INJECTING=false
 # VITE_EXCLUDED_ROUTES=''
-# VITE_ORIGIN='http://localhost:3479'
-# VITE_PORT=3479
+# VITE_ORIGIN='http://localhost:3483'
+# VITE_PORT=3483
 # VITE_BUILD_DIR='assets/dist'
 # VITE_ENTRY_FILE='main.js'
 # VITE_RESOURCES_DIR='resources'
