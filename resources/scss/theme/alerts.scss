@@ -1,0 +1,57 @@
+/*
+ * --------------------------------------------------------------------------
+ * ALERTS
+ * --------------------------------------------------------------------------
+ */
+:root {
+  --bf-body-bg: #f1f5f9;
+  --bf-sidebar-bg: #252535;
+  --bf-sidebar-bg-active: #353555;
+  --bf-sidebar-subnav-bg-active: #454565;
+  --bf-sidebar-text: #adadc5;
+  --bf-black: #222;
+  --bf-blue: #2470dc;
+  --bf-grey: #727272;
+  --bf-light-grey: #d2d2d2;
+  --bf-white: #f7f7f7;
+  --bf-success: #5cb85c;
+  --info: #5bc0de;
+  --warning: #f0ad4e;
+  --danger: #d9534f;
+}
+
+#alerts-wrapper {
+  position: absolute;
+  top: 30px !important;
+  right: 1% !important;
+  left: auto !important;
+  min-width: 20rem !important;
+  z-index: 9999;
+}
+
+#alerts-wrapper .alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.95;
+}
+
+#alerts-wrapper .alert-primary {
+  border-bottom: 3px solid var(--bs-primary);
+}
+
+#alerts-wrapper .alert-info {
+  border-bottom: 3px solid var(--bs-info);
+}
+
+#alerts-wrapper .alert-warning {
+  border-bottom: 3px solid var(--bs-warning);
+}
+
+#alerts-wrapper .alert-danger {
+  border-bottom: 3px solid var(--bs-danger);
+}
+
+#alerts-wrapper .alert-success {
+  border-bottom: 3px solid var(--bs-success);
+}

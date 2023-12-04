@@ -1,0 +1,23 @@
+// Bootstrap 5
+@use "./bootstrap_overrides" as *;
+
+// Theme
+@use "./theme/theme" as *;
+
+// @use "./theme/font_face" as *;
+@use "./theme/sweet-alert.scss" as *;
+@use "./theme/alerts.scss";
+
+// Fontawesome
+@import "./fontawesome/fontawesome";
+@import "./fontawesome/solid";
+@import "./fontawesome/larger";
+@import "./fontawesome/list";
+
+// @import "./fontawesome/rotated-flipped";
+// @import "./fontawesome/bordered-pulled";
+// @import "./fontawesome/fixed-width";
+// @import "./fontawesome/stacked";
+
+// Tom-Select
+@import "./tom-select/tom-select.bootstrap5";

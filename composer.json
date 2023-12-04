@@ -1,22 +1,23 @@
 {
-    "name": "codeigniter4/appstarter",
-    "description": "CodeIgniter4 starter app",
+    "name": "mpr/ci-project-template",
+    "description": "CodeIgniter4 project template",
     "license": "MIT",
     "type": "project",
-    "homepage": "https://codeigniter.com",
-    "support": {
-        "forum": "https://forum.codeigniter.com/",
-        "source": "https://github.com/codeigniter4/CodeIgniter4",
-        "slack": "https://codeigniterchat.slack.com"
-    },
     "require": {
-        "php": "^7.4 || ^8.0",
-        "codeigniter4/framework": "^4.0"
+        "php": "^8.0",
+        "codeigniter4/framework": "^4.0",
+        "codeigniter4/shield": "^1.0@beta",
+		"codeigniter4/translations": "^4.3",
+		"liaison/revision": "^1.1",
+		"codeigniter/coding-standard": "^1.7",
+		"mihatori/codeignitervite": "^1.1",
+		"michalsn/codeigniter-htmx": "^1.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
-        "phpunit/phpunit": "^9.1"
+        "phpunit/phpunit": "^9.1",
+		"phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -34,6 +35,16 @@
         "sort-packages": true
     },
     "scripts": {
-        "test": "phpunit"
-    }
+        "test": "phpunit",
+        "cs-fix": [
+			"PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --verbose"
+		]
+    },
+    "support": {
+        "forum": "https://forum.codeigniter.com/",
+        "source": "https://github.com/codeigniter4/CodeIgniter4",
+        "slack": "https://codeigniterchat.slack.com"
+    },
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }

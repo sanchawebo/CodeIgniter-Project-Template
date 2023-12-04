@@ -1,0 +1,57 @@
+@use "../bootstrap_overrides.scss" as bs;
+@use "sass:map";
+
+.swal-modal {
+  width: 560px;
+  border-radius: bs.$border-radius;
+}
+
+.swal-icon {
+  width: 3rem;
+  height: 3rem;
+
+  &--warning {
+    border-color: map.get(bs.$theme-colors, "danger") !important;
+
+    &__body {
+      height: 17px;
+      background-color: map.get(bs.$theme-colors, "danger");
+    }
+
+    &__dot {
+      background-color: map.get(bs.$theme-colors, "danger");
+    }
+  }
+}
+
+.swal-button {
+  font-size: 1.25rem;
+
+  &--cancel {
+    border: 1px solid bs.$secondary;
+    border-radius: bs.$border-radius;
+  }
+
+  &--danger {
+    border-radius: bs.$border-radius;
+  }
+}
+
+.swal-text,
+.swal-content {
+  background-color: map.get(bs.$theme-colors, "warning");
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid bs.$secondary;
+  border-radius: bs.$border-radius;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.swal-footer {
+  background-color: map.get(bs.$theme-colors, "secondary-lightish");
+  margin-top: 1rem;
+  border-top: 1px solid map.get(bs.$theme-colors, "secondary");
+  overflow: hidden;
+}

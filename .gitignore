@@ -63,6 +63,8 @@ writable/uploads/*
 writable/debugbar/*
 !writable/debugbar/.gitkeep
 
+writable/revision/*
+
 php_errors.log
 
 #-------------------------
@@ -126,3 +128,8 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+# NPM
+node_modules
+
+# CS Fixer
+.php-cs-fixer.cache
