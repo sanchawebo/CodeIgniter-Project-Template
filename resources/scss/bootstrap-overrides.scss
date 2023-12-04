@@ -1,0 +1,151 @@
+@use "sass:color";
+@use "sass:map";
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$secondary: #707070;
+$light-gray: #e8e8e8;
+$blue: #006aaf;
+$light-blue: rgba(
+  $color: $blue,
+  $alpha: 25%
+);
+$red: #d04539;
+$light-red: #dd776e;
+$green: #118f40;
+$light-green: #19ba51;
+$cyan: #0089af;
+$yellow: #ffc107;
+$theme-colors: (
+  "primary-dark": #005a95,
+  "primary": $blue,
+  "primary-light": rgb(191 218 235),
+  "primary-lighter":
+    rgba(
+      $color: $blue,
+      $alpha: 15%
+    ),
+  "primary-subtle": #cce1ef,
+  "secondary": $secondary,
+  "secondary-lightish": #d5d5d5,
+  "secondary-light": $light-gray,
+  "secondary-lighter": #f4f4f4,
+  "success": $green,
+  "success-light": $light-green,
+  "success-subtle": #cfe9d9,
+  "info": $cyan,
+  "warning": $yellow,
+  "warning-subtle": #fff3cd,
+  "danger": $red,
+  "danger-light": $light-red,
+  "danger-subtle": #f6dad7,
+  "light": #fff,
+  "dark": #343a40,
+  "black": #000,
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 992px,
+  md: 1200px,
+  lg: 1440px,
+  xl: 1600px
+);
+$container-max-widths: (
+  sm: 960px,
+  md: 1140px,
+  lg: 1344px,
+  xl: 1504px
+);
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  2dot5: 0.75rem,
+  3: 1rem,
+  3dot5: 1.25rem,
+  4: 1.5rem,
+  4dot5: 2rem,
+  5: 3rem,
+  6: 4rem,
+  7: 5rem
+);
+
+// Global Options:
+$enable-negative-margins: true;
+$enable-dark-mode: true;
+$enable-rounded: false;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+
+// @import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+
+// @import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/offcanvas";
+
+// @import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Add utility-API additions/modifications here
+$utilities: map.merge(
+  $utilities,
+  (
+    "letter-spacing": (
+      property: letter-spacing,
+      values:
+        map.merge(
+          $spacers,
+          (
+            auto: auto
+          )
+        )
+    )
+  )
+);
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
