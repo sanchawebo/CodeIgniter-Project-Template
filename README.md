@@ -12,3 +12,4 @@
 4. Set to Development Mode: If it is not on the production server, set `CI_ENVIRONMENT` to `development` in **.env** file to take advantage of the debugging tools provided.
 5. Set Writable Folder Permission: If you will be running your site using a web server (e.g., Apache or nginx), you will need to modify the permissions for the writable folder inside your project, so that it is writable by the user or account used by your web server.
 6. Email: Configure `app/Config/Email.php` to allow Shield to send emails.
+7. Change `SITE_NAME` in `app/Config/Constants.php` to your sites name.
