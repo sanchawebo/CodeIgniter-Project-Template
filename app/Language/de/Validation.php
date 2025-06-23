@@ -29,6 +29,7 @@ return [
     'differs'               => 'Das {field}-Formularfeld muss sich vom Feld {param} unterscheiden.',
     'equals'                => 'Das {field}-Formularfeld muss exakt {param} entsprechen.',
     'exact_length'          => 'Das {field}-Formularfeld muss genau {param} Zeichen lang sein.',
+    'field_exists'          => 'Das {field}-Formularfeld muss vorhanden sein.',
     'greater_than'          => 'Das {field}-Formularfeld muss eine Zahl größer als {param} enthalten.',
     'greater_than_equal_to' => 'Das {field}-Formularfeld muss eine Zahl größer oder gleich {param} enthalten.',
     'hex'                   => 'Das {field}-Formularfeld darf nur hexadezimale Zeichen enthalten.',
@@ -71,4 +72,5 @@ return [
     'mime_in'  => 'Das {field}-Formularfeld enthält keinen gültigen Mime-Typ.',
     'ext_in'   => 'Das {field}-Formularfeld enthält keine gültige Dateiendung.',
     'max_dims' => 'Das {field}-Formularfeld enthält entweder kein Bild, oder es ist zu breit oder zu hoch.',
+    'min_dims' => 'Das {field}-Formularfeld enthält entweder kein Bild, oder es ist zu wenig breit oder zu wenig hoch.',
 ];
