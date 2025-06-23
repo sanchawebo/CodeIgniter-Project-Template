@@ -4,22 +4,22 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.0",
-        "codeigniter4/framework": "^4.0",
-        "codeigniter4/shield": "^1.0@beta",
-		"codeigniter4/translations": "^4.3",
-		"liaison/revision": "^1.1",
-		"mihatori/codeignitervite": "^1.1",
-		"michalsn/codeigniter-htmx": "^1.4"
+        "php": "^8.3",
+        "codeigniter4/framework": "^4.6",
+        "codeigniter4/shield": "^1.1",
+        "codeigniter4/translations": "^4.6",
+        "michalsn/codeigniter-htmx": "^2.1",
+        "mihatori/codeignitervite": "^1.1"
     },
     "require-dev": {
-        "codeigniter/coding-standard": "^1.7",
-        "codeigniter/phpstan-codeigniter": "v1.4.2.70400",
+        "codeigniter/coding-standard": "^1.8",
+        "codeigniter/phpstan-codeigniter": "^v1.5",
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
         "phpstan/extension-installer": "^1.3",
-        "phpstan/phpstan": "^1.10",
-        "phpunit/phpunit": "^9.1"
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5.16 || ^11.2",
+        "tatter/patches": "^2.1"
     },
     "autoload": {
         "exclude-from-classmap": [
