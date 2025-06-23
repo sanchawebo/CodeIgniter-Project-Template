@@ -1,4 +1,6 @@
-{ "extends": ["stylelint-config-standard-scss"],
+{
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "selector-id-pattern": "[a-zA-Z]+"
-  } }
+  }
+}

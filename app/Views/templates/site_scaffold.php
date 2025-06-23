@@ -6,16 +6,14 @@
 // 2. Insert site code in the main section.
 // 3. Write or import specific JS-Code in pageScripts section.
 ?>
-<?= $this->section('title') ?>
+<?php $this->section('title') ?>
 <?= ucfirst('@:@') . ' | ' . SITE_NAME ?>
-<?= $this->endSection() ?>
+<?php $this->endSection() ?>
 
-<?= $this->extend('templates/layout'); ?>
-<?= $this->section('main'); ?>
-<?= helper('html'); ?>
+<?php $this->extend('templates/layout'); ?>
+<?php $this->section('main'); ?>
 
+<?php $this->endSection() ?>
 
-<?= $this->endSection() ?>
-
-<?= $this->section('pageScripts') ?>
-<?= $this->endSection() ?>
+<?php $this->section('pageScripts') ?>
+<?php $this->endSection() ?>

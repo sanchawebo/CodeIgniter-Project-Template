@@ -1,20 +1,13 @@
-// Bootstrap 5
-@use "./bootstrap-overrides" as *;
+@import 'theme';
+@import './bootstrap-overrides';
+@import './helpers';
 
 // Theme
-@use "./theme/theme" as *;
+@import './styles/main';
 
-// @use "./theme/font_face" as *;
-@use "./theme/sweet-alert.scss" as *;
-@use "./theme/alerts.scss";
+// Vanillajs Datepicker
+@import 'vanillajs-datepicker/sass/datepicker-bs5';
 
 // Fontawesome
-@import "./fontawesome/fontawesome";
-@import "./fontawesome/solid";
-@import "./fontawesome/larger";
-@import "./fontawesome/list";
-
-// @import "./fontawesome/rotated-flipped";
-// @import "./fontawesome/bordered-pulled";
-// @import "./fontawesome/fixed-width";
-// @import "./fontawesome/stacked";
+@import './fontawesome/fontawesome';
+@import './fontawesome/solid';

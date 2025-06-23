@@ -7,4 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
+// @phpstan-ignore codeigniter.unknownServiceMethod
+// @phpstan-ignore method.nonObject
 service('auth')->routes($routes);

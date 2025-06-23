@@ -1,0 +1,9 @@
+@use 'sass:map';
+@import './variables.production';
+
+// Special Vars
+$header-gradient: linear-gradient(
+  to right,
+  map.get($theme-colors, 'danger'),
+  map.get($theme-colors, 'info')
+);

@@ -3,13 +3,18 @@ parameters:
 	level: 5
 	paths:
 		- app/
+	excludePaths:
+		- app/Config/Auth.php
+		- app/Config/Kint.php
+		- app/Commands/Generators/Views/*
+		- app/Views/errors/cli/*
+		- app/Views/errors/html/*
+	dynamicConstantNames:
+		- APP_NAMESPACE
+		- CI_DEBUG
+		- ENVIRONMENT
 	bootstrapFiles:
 		- vendor/codeigniter4/framework/system/Test/bootstrap.php
-	excludePaths:
-		- app/Config/Kint.php
-		- app/Config/Auth.php
-		- app/Config/View.php
-		- app/Views/*
 	ignoreErrors:
 	universalObjectCratesClasses:
 		- CodeIgniter\Entity
@@ -17,10 +22,12 @@ parameters:
 		- Faker\Generator
 	scanDirectories:
 		- vendor/codeigniter4/framework/system/Helpers
+		- vendor/codeigniter4/shield/src/Helpers
+		- vendor/codeigniter4/settings/src/Helpers
 		- vendor/mihatori/codeignitervite/src/Helpers
-	scanFiles:
-		- vendor/codeigniter4/settings/src/Helpers/setting_helper.php
-	dynamicConstantNames:
-		- APP_NAMESPACE
-		- CI_DEBUG
-		- ENVIRONMENT
+	reportUnmatchedIgnoredErrors: false
+	checkFunctionNameCase: true
+	checkInternalClassCaseSensitivity: true
+	codeigniter:
+		additionalServices:
+			- CodeIgniter\Shield\Config\Services

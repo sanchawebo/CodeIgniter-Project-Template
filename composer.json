@@ -1,55 +1,57 @@
 {
-    "name": "mpr/ci-project-template",
-    "description": "CodeIgniter4 project template",
-    "license": "MIT",
-    "type": "project",
-    "require": {
-        "php": "^8.3",
-        "codeigniter4/framework": "^4.6",
-        "codeigniter4/shield": "^1.1",
-        "codeigniter4/translations": "^4.6",
-        "michalsn/codeigniter-htmx": "^2.1",
-        "mihatori/codeignitervite": "^1.1"
-    },
-    "require-dev": {
-        "codeigniter/coding-standard": "^1.8",
-        "codeigniter/phpstan-codeigniter": "^v1.5",
-        "fakerphp/faker": "^1.9",
-        "mikey179/vfsstream": "^1.6",
-        "phpstan/extension-installer": "^1.3",
-        "phpstan/phpstan": "^2.1",
-        "phpunit/phpunit": "^10.5.16 || ^11.2",
-        "tatter/patches": "^2.1"
-    },
-    "autoload": {
-        "exclude-from-classmap": [
-            "**/Database/Migrations/**"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\Support\\": "tests/_support"
-        }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "phpstan/extension-installer": true
-        }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "cs-fix": [
-			"PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --verbose"
-		]
-    },
-    "support": {
-        "forum": "https://forum.codeigniter.com/",
-        "source": "https://github.com/codeigniter4/CodeIgniter4",
-        "slack": "https://codeigniterchat.slack.com"
-    },
-	"minimum-stability": "dev",
-	"prefer-stable": true
+  "name": "mpr/ci-project-template",
+  "description": "CodeIgniter4 project template",
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": "^8.3",
+    "codeigniter4/framework": "^4.6",
+    "codeigniter4/shield": "^1.1",
+    "codeigniter4/translations": "^4.6",
+    "michalsn/codeigniter-htmx": "^2.1",
+    "mihatori/codeignitervite": "^1.1"
+  },
+  "require-dev": {
+    "codeigniter/coding-standard": "^1.8",
+    "codeigniter/phpstan-codeigniter": "^v1.5",
+    "fakerphp/faker": "^1.9",
+    "mikey179/vfsstream": "^1.6",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^10.5.16 || ^11.2",
+    "rector/rector": "^2.0",
+    "tatter/patches": "^2.1"
+  },
+  "autoload": {
+    "exclude-from-classmap": [
+      "**/Database/Migrations/**"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Support\\": "tests/_support"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "cs-fix": [
+      "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --verbose"
+    ],
+    "phpstan-baseline": "phpstan analyse -c \"./phpstan.neon\"  --no-interaction --memory-limit=1G -b"
+  },
+  "support": {
+    "forum": "https://forum.codeigniter.com/",
+    "source": "https://github.com/codeigniter4/CodeIgniter4",
+    "slack": "https://codeigniterchat.slack.com"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

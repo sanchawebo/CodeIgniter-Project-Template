@@ -1,0 +1,29 @@
+.text-no-wrap {
+  white-space: nowrap;
+}
+
+.white-space-pre {
+  white-space: pre;
+}
+
+.word-wrap {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-wrap-balance {
+  text-wrap: wrap;
+  text-wrap: balance;
+}
+
+.text-wrap-pretty {
+  text-wrap: wrap;
+  text-wrap: balance;
+  text-wrap: pretty;
+}

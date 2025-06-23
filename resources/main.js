@@ -1,12 +1,15 @@
-import 'htmx.org';
+/* eslint-disable no-unused-vars */
+import './js/htmx.js';
 
 import {
-  // eslint-disable-next-line no-unused-vars
   Alert, Modal, Dropdown, Offcanvas, Collapse, Tab, Tooltip,
 } from 'bootstrap';
+import swal from 'sweetalert';
 
 import './scss/main.scss';
 
-// Init tooltips
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-[...tooltipTriggerList].map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl));
+// * Enable these if you need access to Bootstraps methods via eg hyperscript
+// window.Collapse = Collapse;
+// window.Tooltip = Tooltip;
+// window.Modal = Modal;
+// window.swal = swal;

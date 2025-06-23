@@ -1,0 +1,6 @@
+vendor/
+node_modules/
+resources/scss/fontawesome
+resources/scss/sweet-alert
+**/*.js
+**/*.md
