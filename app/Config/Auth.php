@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Config;
 
+use Authentication\Actions\AdminActivator;
 use CodeIgniter\Shield\Authentication\Actions\ActionInterface;
 use CodeIgniter\Shield\Authentication\AuthenticatorInterface;
 use CodeIgniter\Shield\Authentication\Authenticators\AccessTokens;
@@ -46,17 +47,18 @@ class Auth extends ShieldAuth
      * --------------------------------------------------------------------
      */
     public array $views = [
-        'login'                       => '\CodeIgniter\Shield\Views\login',
-        'register'                    => '\CodeIgniter\Shield\Views\register',
-        'layout'                      => '\CodeIgniter\Shield\Views\layout',
-        'action_email_2fa'            => '\CodeIgniter\Shield\Views\email_2fa_show',
-        'action_email_2fa_verify'     => '\CodeIgniter\Shield\Views\email_2fa_verify',
-        'action_email_2fa_email'      => '\CodeIgniter\Shield\Views\Email\email_2fa_email',
-        'action_email_activate_show'  => '\CodeIgniter\Shield\Views\email_activate_show',
-        'action_email_activate_email' => '\CodeIgniter\Shield\Views\Email\email_activate_email',
-        'magic-link-login'            => '\CodeIgniter\Shield\Views\magic_link_form',
-        'magic-link-message'          => '\CodeIgniter\Shield\Views\magic_link_message',
-        'magic-link-email'            => '\CodeIgniter\Shield\Views\Email\magic_link_email',
+        'login'                        => 'auth/login',
+        'register'                     => 'auth/register',
+        'layout'                       => 'auth/layout',
+        'action_email_2fa'             => 'auth/email_2fa_show',
+        'action_email_2fa_verify'      => 'auth/email_2fa_verify',
+        'action_email_2fa_email'       => 'auth/email/email_2fa_email',
+        'action_email_activate_show'   => 'auth/email_activate_show',
+        'action_email_activate_email'  => 'auth/email/email_activate_email',
+        'action_email_activated_email' => 'auth/email/email_activated_email',
+        'magic-link-login'             => 'auth/magic_link_form',
+        'magic-link-message'           => 'auth/magic_link_message',
+        'magic-link-email'             => 'auth/email/magic_link_email',
     ];
 
     /**
@@ -74,12 +76,13 @@ class Auth extends ShieldAuth
      * to apply any logic you may need.
      */
     public array $redirects = [
-        'register'          => '/',
-        'login'             => '/',
+        'register'          => 'login',
+        'login'             => 'dashboard',
         'logout'            => 'login',
-        'force_reset'       => '/',
-        'permission_denied' => '/',
-        'group_denied'      => '/',
+        'force_reset'       => 'dashboard',
+        'permission_denied' => 'dashboard',
+        'group_denied'      => 'dashboard',
+        'magic_link_login'  => 'reset-password-form',
     ];
 
     /**
@@ -98,7 +101,7 @@ class Auth extends ShieldAuth
      * @var array<string, class-string<ActionInterface>|null>
      */
     public array $actions = [
-        'register' => null,
+        'register' => AdminActivator::class,
         'login'    => null,
     ];
 
@@ -137,7 +140,7 @@ class Auth extends ShieldAuth
      * when using the 'chain' filter. Each Authenticator listed will be checked.
      * If no match is found, then the next in the chain will be checked.
      *
-     * @var string[]
+     * @var         list<string>
      * @phpstan-var list<string>
      */
     public array $authenticationChain = [
@@ -264,7 +267,7 @@ class Auth extends ShieldAuth
      * You can add custom classes as long as they adhere to the
      * CodeIgniter\Shield\Authentication\Passwords\ValidatorInterface.
      *
-     * @var class-string<ValidatorInterface>[]
+     * @var list<class-string<ValidatorInterface>>
      */
     public array $passwordValidators = [
         CompositionValidator::class,
@@ -344,7 +347,7 @@ class Auth extends ShieldAuth
      * - PASSWORD_ARGON2I  - As of PHP 7.2 only if compiled with support for it
      * - PASSWORD_ARGON2ID - As of PHP 7.3 only if compiled with support for it
      */
-    public string $hashAlgorithm = PASSWORD_DEFAULT;
+    public string $hashAlgorithm = PASSWORD_ARGON2ID;
 
     /**
      * --------------------------------------------------------------------
@@ -354,10 +357,10 @@ class Auth extends ShieldAuth
      * the "time_cost" and the number of "threads", whenever a password hash is
      * created.
      */
-    public int $hashMemoryCost = 65536; // PASSWORD_ARGON2_DEFAULT_MEMORY_COST;
+    public int $hashMemoryCost = PASSWORD_ARGON2_DEFAULT_MEMORY_COST;
 
-    public int $hashTimeCost = 4;   // PASSWORD_ARGON2_DEFAULT_TIME_COST;
-    public int $hashThreads  = 1;   // PASSWORD_ARGON2_DEFAULT_THREADS;
+    public int $hashTimeCost = PASSWORD_ARGON2_DEFAULT_TIME_COST;
+    public int $hashThreads  = PASSWORD_ARGON2_DEFAULT_THREADS;
 
     /**
      * --------------------------------------------------------------------
@@ -418,7 +421,7 @@ class Auth extends ShieldAuth
      * @var array<string, string>
      */
     public array $tables = [
-        'users'             => 'users',
+        'users'             => 'auth_users',
         'identities'        => 'auth_identities',
         'logins'            => 'auth_logins',
         'token_logins'      => 'auth_token_logins',
@@ -439,7 +442,7 @@ class Auth extends ShieldAuth
      *
      * @var class-string<UserModel>
      */
-    public string $userProvider = UserModel::class;
+    public string $userProvider = \App\Models\UserModel::class;
 
     /**
      * Returns the URL that a user should be redirected
@@ -449,6 +452,10 @@ class Auth extends ShieldAuth
     {
         $session = session();
         $url     = $session->getTempdata('beforeLoginUrl') ?? setting('Auth.redirects')['login'];
+
+        if (session('magicLogin')) {
+            $url = setting('Auth.redirects')['magic_link_login'];
+        }
 
         return $this->getUrl($url);
     }
@@ -521,7 +528,7 @@ class Auth extends ShieldAuth
         $final_url = '';
 
         switch (true) {
-            case strpos($url, 'http://') === 0 || strpos($url, 'https://') === 0: // URL begins with 'http' or 'https'. E.g. http://example.com
+            case str_starts_with($url, 'http://') || str_starts_with($url, 'https://')  : // URL begins with 'http' or 'https'. E.g. http://example.com
                 $final_url = $url;
                 break;
 

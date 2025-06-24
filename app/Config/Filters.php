@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\OnlineCheck;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -34,6 +35,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'online'        => OnlineCheck::class,
     ];
 
     /**
@@ -66,12 +68,41 @@ class Filters extends BaseFilters
      * applied before and after every request.
      *
      * @var array<string, array<string, array<string, string>>>|array<string, list<string>>
+     *
+     * @phpstan-ignore property.defaultValue
      */
     public array $globals = [
         'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'session' => ['except' => [
+                'login',
+                'login/magic-link',
+                'login/verify-magic-link',
+                'register',
+                'request-access*',
+                'auth/a/*',
+                'logout',
+                'change-language*',
+                'files/*',
+                'api/*',
+                'site-offline',
+            ]],
+            'online' => ['except' => [
+                'login',
+                'login/magic-link',
+                'login/verify-magic-link',
+                'register',
+                'request-access*',
+                'auth/a/*',
+                'logout',
+                'change-language*',
+                'files/*',
+                'api/*',
+                'site-offline',
+            ]],
+            'csrf' => ['except' => [
+                'files/*',
+                'api/*',
+            ]],
         ],
         'after' => [
             // 'honeypot',
@@ -103,5 +134,15 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'auth-rates' => ['before' => [
+            'login',
+            'login/magic-link',
+            'login/verify-magic-link',
+            'register',
+            'request-access*',
+            'auth/a/*',
+        ]],
+        'alerts' => ['after' => ['admin*']],
+    ];
 }

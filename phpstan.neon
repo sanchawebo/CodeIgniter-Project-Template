@@ -25,6 +25,8 @@ parameters:
 		- vendor/codeigniter4/shield/src/Helpers
 		- vendor/codeigniter4/settings/src/Helpers
 		- vendor/mihatori/codeignitervite/src/Helpers
+	scanFiles:
+		- app/Common.php
 	reportUnmatchedIgnoredErrors: false
 	checkFunctionNameCase: true
 	checkInternalClassCaseSensitivity: true

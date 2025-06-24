@@ -12,12 +12,9 @@ namespace Config;
  * share a system folder between multiple applications, and more.
  *
  * All paths are relative to the project's root folder.
-<<<<<<< HEAD:app/Config/Paths.php
-=======
  *
  * NOTE: This class is required prior to Autoloader instantiation,
  *       and does not extend BaseConfig.
->>>>>>> 56065ac (Patch framework (v4.4.3 => v4.6.1)):Config/Paths.php
  */
 class Paths
 {

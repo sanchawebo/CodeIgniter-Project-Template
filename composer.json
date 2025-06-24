@@ -9,7 +9,8 @@
     "codeigniter4/shield": "^1.1",
     "codeigniter4/translations": "^4.6",
     "michalsn/codeigniter-htmx": "^2.1",
-    "mihatori/codeignitervite": "^1.1"
+    "mihatori/codeignitervite": "^1.1",
+    "phpoffice/phpspreadsheet": "^4.4"
   },
   "require-dev": {
     "codeigniter/coding-standard": "^1.8",

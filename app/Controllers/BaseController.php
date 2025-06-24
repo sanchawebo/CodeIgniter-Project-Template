@@ -2,11 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Models\UserSettingsModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
-use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Services;
+use Michalsn\CodeIgniterHtmx\HTTP\IncomingRequest;
+use Michalsn\CodeIgniterHtmx\HTTP\Response;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -27,6 +30,13 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+
+    /**
+     * Instance of the main Response object.
+     *
+     * @var Response
+     */
+    protected $response;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -52,7 +62,51 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
+        $this->setLocale();
+    }
 
-        // E.g.: $this->session = service('session');
+    protected function setLocale()
+    {
+        /** @see https://stackoverflow.com/questions/60250996/how-to-set-specific-language-for-all-pages-in-codeigniter-4 */
+        $session  = Services::session();
+        $language = Services::language();
+        if (! isset($session->lang)) {
+            $userSettings = model(UserSettingsModel::class);
+            $prefLang     = $userSettings->getLang(auth()->id());
+            if ($prefLang !== null) {
+                $lang = $prefLang;
+                $session->set('lang', $prefLang);
+            }
+        } else {
+            // @phpstan-ignore-next-line
+            $lang = $session?->lang;
+        }
+        $language->setLocale($lang ?? 'en');
+    }
+
+    /**
+     * Returns view() or view_fragment()
+     * - Normal Request: return view as is
+     * - HTMX Request: return the specified (default `body`) fragment
+     */
+    protected function returnFragment(string $viewName, array $data = [], string $fragmentName = 'body')
+    {
+        if ($this->request->is('htmx')) {
+            if ($fragmentName === 'body') {
+                // Return the <title>-fragment to change the page title.
+                $fragmentName = ['pageTitle', 'body'];
+            }
+
+            return view_fragment($viewName, $fragmentName, $data);
+        }
+
+        return view($viewName, $data);
+    }
+
+    protected function oobCsrfSwap(): string
+    {
+        return sprintf('<div hx-swap-oob="true:#csrfTokenWrapper">
+            %s
+        </div>', csrf_field());
     }
 }

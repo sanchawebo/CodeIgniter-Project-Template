@@ -45,21 +45,21 @@ class AuthGroups extends ShieldAuthGroups
             'title'       => 'Super Admin',
             'description' => 'Complete control of the site.',
         ],
-        'admin' => [
-            'title'       => 'Admin',
+        'admin-mpr' => [
+            'title'       => 'MPR Admin',
             'description' => 'Day to day administrators of the site.',
         ],
-        'developer' => [
-            'title'       => 'Developer',
-            'description' => 'Site programmers.',
+        'admin-koki' => [
+            'title'       => 'Koki Admin',
+            'description' => 'Can grant access and view analytics/feedback',
+        ],
+        'user-koki' => [
+            'title'       => 'Koki User',
+            'description' => 'Can grant access to new dealers',
         ],
         'user' => [
-            'title'       => 'User',
-            'description' => 'General users of the site. Often customers.',
-        ],
-        'beta' => [
-            'title'       => 'Beta User',
-            'description' => 'Has access to beta-level features.',
+            'title'       => 'Dealer',
+            'description' => 'Can generate PDFs.',
         ],
     ];
 
@@ -72,13 +72,17 @@ class AuthGroups extends ShieldAuthGroups
      * If a permission is not listed here it cannot be used.
      */
     public array $permissions = [
-        'admin.access'        => 'Can access the sites admin area',
-        'admin.settings'      => 'Can access the main site settings',
-        'users.manage-admins' => 'Can manage other admins',
-        'users.create'        => 'Can create new non-admin users',
-        'users.edit'          => 'Can edit existing non-admin users',
-        'users.delete'        => 'Can delete existing non-admin users',
-        'beta.access'         => 'Can access beta-level features',
+        'admin.access'      => 'Can access the sites admin area',
+        'admin.api'         => 'Can access API features',
+        'admin.db'          => 'Can access database features (migrations/seeders)',
+        'admin.errors'      => 'Can access error logs',
+        'admin.testing'     => 'Can access test/debug site',
+        'admin.settings'    => 'Can access the main site settings',
+        'admin.feedback'    => 'Can access feedback analytics',
+        'users.activate'    => 'Can activate registering users',
+        'users.delete'      => 'Can delete existing non-admin users',
+        'site.view-offline' => 'Can view the site even in offline mode',
+        'beta.access'       => 'Can access beta-level features',
     ];
 
     /**
@@ -92,26 +96,32 @@ class AuthGroups extends ShieldAuthGroups
     public array $matrix = [
         'superadmin' => [
             'admin.*',
-            'users.*',
             'beta.*',
+            'me.*',
+            'site.*',
+            'users.*',
         ],
-        'admin' => [
+        'admin-mpr' => [
             'admin.access',
+            'admin.feedback',
+            'beta.*',
+            'me.*',
+            'users.list',
             'users.create',
             'users.edit',
-            'users.delete',
-            'beta.access',
+            'users.settings',
+            'users.activate',
         ],
-        'developer' => [
+        'admin-koki' => [
             'admin.access',
-            'admin.settings',
-            'users.create',
-            'users.edit',
-            'beta.access',
+            'admin.feedback',
+            'users.activate',
+            'users.list',
+        ],
+        'user-koki' => [
+            'admin.access',
+            'users.activate',
         ],
         'user' => [],
-        'beta' => [
-            'beta.access',
-        ],
     ];
 }

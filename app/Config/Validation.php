@@ -34,11 +34,121 @@ class Validation extends BaseConfig
      * @var array<string, string>
      */
     public array $templates = [
-        'list'   => 'CodeIgniter\Validation\Views\list',
-        'single' => 'CodeIgniter\Validation\Views\single',
+        // 'list'   => 'CodeIgniter\Validation\Views\list',
+        // 'single' => 'CodeIgniter\Validation\Views\single',
+        'list'        => 'errors' . DIRECTORY_SEPARATOR . '_my_list',
+        'single'      => 'errors' . DIRECTORY_SEPARATOR . '_my_single',
+        'single_full' => 'errors' . DIRECTORY_SEPARATOR . '_my_single_full',
     ];
 
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+    public $requestAccess = [
+        'email' => [
+            'label' => 'ScpAuth.requestAccess.email',
+            'rules' => [
+                'required',
+                'max_length[254]',
+                'valid_email',
+                'is_unique[users.username]',
+                'is_unique[auth_identities.secret]',
+            ],
+        ],
+        'bosch_contact_email' => [
+            'label' => 'ScpAuth.requestAccess.boschEmail',
+            'rules' => [
+                'required',
+                'max_length[254]',
+                'valid_email',
+            ],
+        ],
+    ];
+    public $registration = [
+        'email' => [
+            'label' => 'ScpAuth.register.email',
+            'rules' => [
+                'required',
+                'max_length[254]',
+                'valid_email',
+                'is_unique[users.username]',
+                'is_unique[auth_identities.secret]',
+            ],
+        ],
+        'first_name' => [
+            'label' => 'ScpAuth.register.firstName',
+            'rules' => [
+                'required',
+                'max_length[100]',
+                'string',
+            ],
+        ],
+        'last_name' => [
+            'label' => 'ScpAuth.register.lastName',
+            'rules' => [
+                'required',
+                'max_length[100]',
+                'string',
+            ],
+        ],
+        'country_code' => [
+            'label' => 'ScpAuth.register.country',
+            'rules' => [
+                'required',
+            ],
+        ],
+        'password' => [
+            'label' => 'ScpAuth.register.password',
+            'rules' => [
+                'required',
+                'max_byte[72]',
+                'strong_password[]',
+            ],
+            'errors' => [
+                'max_byte' => 'Auth.errorPasswordTooLongBytes',
+            ],
+        ],
+        'password_confirm' => [
+            'label' => 'ScpAuth.register.passwordConfirm',
+            'rules' => 'required|matches[password]',
+        ],
+    ];
+    public $changePassword = [
+        'password_old' => [
+            'label' => 'Auth.password',
+            'rules' => 'required|old_password',
+        ],
+        'password' => [
+            'label' => 'Auth.password',
+            'rules' => [
+                'required',
+                'max_byte[72]',
+                'strong_password[]',
+            ],
+            'errors' => [
+                'max_byte' => 'Auth.errorPasswordTooLongBytes',
+            ],
+        ],
+        'password_confirm' => [
+            'label' => 'Auth.passwordConfirm',
+            'rules' => 'required|matches[password]',
+        ],
+    ];
+    public $resetPassword = [
+        'password' => [
+            'label' => 'Auth.password',
+            'rules' => [
+                'required',
+                'max_byte[72]',
+                'strong_password[]',
+            ],
+            'errors' => [
+                'max_byte' => 'Auth.errorPasswordTooLongBytes',
+            ],
+        ],
+        'password_confirm' => [
+            'label' => 'Auth.passwordConfirm',
+            'rules' => 'required|matches[password]',
+        ],
+    ];
 }
