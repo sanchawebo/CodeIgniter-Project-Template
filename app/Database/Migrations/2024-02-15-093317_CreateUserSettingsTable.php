@@ -2,12 +2,25 @@
 
 namespace App\Database\Migrations;
 
+use CodeIgniter\Database\Forge;
 use CodeIgniter\Database\Migration;
+use Config\Auth;
 
 class CreateUserSettingsTable extends Migration
 {
-    public $foreignTable = 'users';
-    public $foreignField = 'id';
+    /**
+     * @var array<string,string>
+     */
+    private array $tables;
+
+    public function __construct(?Forge $forge = null)
+    {
+        parent::__construct($forge);
+
+        /** @var Auth $authConfig */
+        $authConfig   = config('Auth');
+        $this->tables = $authConfig->tables;
+    }
 
     public function up()
     {
@@ -41,7 +54,7 @@ class CreateUserSettingsTable extends Migration
             ],
         ]);
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('user_id', $this->foreignTable, $this->foreignField, 'CASCADE', 'RESTRICT');
+        $this->forge->addForeignKey('user_id', $this->tables['users'], 'id', 'CASCADE', 'RESTRICT');
         $this->forge->createTable('user_settings');
     }
 

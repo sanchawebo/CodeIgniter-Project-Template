@@ -8,6 +8,7 @@
     "test": "tests"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "dev": "vite",
     "build": "vite build",
     "release": "standard-version",
@@ -36,6 +37,9 @@
     "stylelint": "^16.6.1",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-config-standard-scss": "^15.0.1"
+  },
+  "resolutions": {
+    "flat-cache": "3.0.4"
   },
   "standard-version": {
     "header": ""

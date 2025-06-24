@@ -46,8 +46,6 @@ class AddFieldsToUser extends Migration
 
         $fields = [
             'country_code',
-            'bosch_contact_email',
-            'dealer_id',
             'first_name',
             'last_name',
         ];

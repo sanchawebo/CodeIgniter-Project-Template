@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CountryHasCurrenciesMigration extends Migration
+class CountryHasLanguagesMigration extends Migration
 {
     public function up()
     {
@@ -19,7 +19,7 @@ class CountryHasCurrenciesMigration extends Migration
                 'type'       => 'varchar',
                 'constraint' => 3,
             ],
-            'currency_code' => [
+            'lang_code' => [
                 'type'       => 'varchar',
                 'constraint' => 3,
             ],
@@ -36,13 +36,12 @@ class CountryHasCurrenciesMigration extends Migration
         ]);
         $this->forge->addPrimaryKey('id');
         $this->forge->addForeignKey('country_code', 'countries', 'country_code', 'CASCADE', 'RESTRICT');
-        $this->forge->addForeignKey('currency_code', 'currencies', 'currency_code', 'CASCADE', 'RESTRICT');
-        $this->forge->addUniqueKey(['country_code', 'currency_code']);
-        $this->forge->createTable('country_has_currencies');
+        $this->forge->addForeignKey('lang_code', 'languages', 'lang_code', 'CASCADE', 'RESTRICT');
+        $this->forge->createTable('country_has_languages');
     }
 
     public function down()
     {
-        $this->forge->dropTable('country_has_currencies');
+        $this->forge->dropTable('country_has_languages');
     }
 }
