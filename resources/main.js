@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
 import './js/htmx.js';
 
-import {
-  Alert, Modal, Dropdown, Offcanvas, Collapse, Tab, Tooltip,
-} from 'bootstrap';
+import { Alert, Modal, Dropdown, Offcanvas, Collapse, Tab, Tooltip } from 'bootstrap';
 import swal from 'sweetalert';
 
 import './scss/main.scss';
