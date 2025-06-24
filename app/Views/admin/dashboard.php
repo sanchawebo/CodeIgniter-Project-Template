@@ -5,10 +5,10 @@
  */
 ?>
 <?php $this->section('pageTitle') ?>
-<?= lang('ScpAdmin.dashboard.pageTitle') ?>
+<?= lang('Admin.dashboard.pageTitle') ?>
 <?php $this->endSection() ?>
 <?php $this->section('title') ?>
-<?= lang('ScpAdmin.dashboard.title') ?>
+<?= lang('Admin.dashboard.title') ?>
 <?php $this->endSection() ?>
 
 <?php $this->extend('admin/layout'); ?>
@@ -38,9 +38,9 @@
                 'style'      => 'blue',
                 'href'       => route_to('user-list'),
                 'hrefTarget' => '_self',
-                'tagline'    => lang('ScpAdmin.sidebar.users.group'),
-                'headline'   => lang('ScpAdmin.sidebar.users.list'),
-                'subline'    => lang('ScpAdmin.users.desc'),
+                'tagline'    => lang('Admin.sidebar.users.group'),
+                'headline'   => lang('Admin.sidebar.users.list'),
+                'subline'    => lang('Admin.users.desc'),
                 'classes'    => 'h-100',
             ]) ?>
         </div>
@@ -51,9 +51,9 @@
                 'style'      => 'blue',
                 'href'       => route_to('UserController::activateShow'),
                 'hrefTarget' => '_self',
-                'tagline'    => lang('ScpAdmin.sidebar.users.group'),
-                'headline'   => lang('ScpAdmin.sidebar.users.activate'),
-                'subline'    => lang('ScpAdmin.usersActivate.desc'),
+                'tagline'    => lang('Admin.sidebar.users.group'),
+                'headline'   => lang('Admin.sidebar.users.activate'),
+                'subline'    => lang('Admin.usersActivate.desc'),
                 'classes'    => 'h-100',
             ]) ?>
         </div>
@@ -67,9 +67,9 @@
                 'style'      => 'turquoise',
                 'href'       => route_to('admin-feedback'),
                 'hrefTarget' => '_self',
-                'tagline'    => lang('ScpAdmin.sidebar.feedback'),
-                'headline'   => lang('ScpAdmin.sidebar.feedback'),
-                'subline'    => lang('ScpAdmin.feedback.desc'),
+                'tagline'    => lang('Admin.sidebar.feedback'),
+                'headline'   => lang('Admin.sidebar.feedback'),
+                'subline'    => lang('Admin.feedback.desc'),
                 'classes'    => 'h-100',
             ]) ?>
         </div>
@@ -83,9 +83,9 @@
                 'style'      => 'purple',
                 'href'       => route_to('error-logs'),
                 'hrefTarget' => '_self',
-                'tagline'    => lang('ScpAdmin.adminTools'),
-                'headline'   => lang('ScpAdmin.sidebar.error-logs'),
-                'subline'    => lang('ScpAdmin.error-logs.desc'),
+                'tagline'    => lang('Admin.adminTools'),
+                'headline'   => lang('Admin.sidebar.error-logs'),
+                'subline'    => lang('Admin.error-logs.desc'),
                 'classes'    => 'h-100',
             ]) ?>
         </div>
@@ -96,9 +96,9 @@
                 'style'      => 'purple',
                 'href'       => route_to('migration'),
                 'hrefTarget' => '_self',
-                'tagline'    => lang('ScpAdmin.adminTools'),
-                'headline'   => lang('ScpAdmin.sidebar.migrations'),
-                'subline'    => lang('ScpAdmin.migrations.desc'),
+                'tagline'    => lang('Admin.adminTools'),
+                'headline'   => lang('Admin.sidebar.migrations'),
+                'subline'    => lang('Admin.migrations.desc'),
                 'classes'    => 'h-100',
             ]) ?>
         </div>
@@ -107,9 +107,9 @@
                 'style'      => 'purple',
                 'href'       => route_to('seeding'),
                 'hrefTarget' => '_self',
-                'tagline'    => lang('ScpAdmin.adminTools'),
-                'headline'   => lang('ScpAdmin.sidebar.seeding'),
-                'subline'    => lang('ScpAdmin.seeding.desc'),
+                'tagline'    => lang('Admin.adminTools'),
+                'headline'   => lang('Admin.sidebar.seeding'),
+                'subline'    => lang('Admin.seeding.desc'),
                 'classes'    => 'h-100',
             ]) ?>
         </div>

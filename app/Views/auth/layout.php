@@ -12,21 +12,17 @@
   <meta name="robots" content="noindex">
 
   <?php helper(['html', 'vite']); ?>
-  <?= link_tag('assets/frok/v01-frontend-kit.css') ?>
   <?= viteTags('css'); ?>
   <?= viteTags('js'); ?>
-  <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+  <script src="/assets/js/_hyperscript.min.js"></script>
   <title><?php $this->renderSection('title') ?></title>
 </head>
 
-<body class="bg-supergraphic">
-  <div class="e-container">
-    <main id="main-wrapper" role="main">
-      <?php $this->renderSection('main') ?>
-    </main>
-  </div>
+<body>
+  <main role="main">
+    <?= $this->renderSection('main') ?>
+  </main>
 
-  <?= script_tag('assets/frok/v01-frontend-kit.js') ?>
   <?php $this->renderSection('pageScripts') ?>
 </body>
 

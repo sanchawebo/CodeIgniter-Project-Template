@@ -5,10 +5,10 @@
  */
 ?>
 <?php $this->section('pageTitle') ?>
-<?= lang('ScpAdmin.language.pageTitle') ?>
+<?= lang('Admin.language.pageTitle') ?>
 <?php $this->endSection() ?>
 <?php $this->section('title') ?>
-<?= lang('ScpAdmin.language.title') ?>
+<?= lang('Admin.language.title') ?>
 <?php $this->endSection() ?>
 
 <?php $this->extend('admin/layout'); ?>

@@ -8,7 +8,7 @@
 <?php $this->extend(config('Auth')->views['layout']) ?>
 
 <?php $this->section('title') ?>
-<?= lang('ScpAuth.login.pageTitle') ?>
+<?= lang('Auth.login.pageTitle') ?>
 <?php $this->endSection() ?>
 
 <?php $this->section('main') ?>
@@ -20,17 +20,10 @@
       <path id="bosch-logo-anker" d="M12,0C5.37256,0,0,5.37256,0,12c0,6.62738,5.37256,12,12,12s12-5.37262,12-12C23.99646,5.37402,18.62598,0.00354,12,0z  M12,22.87964C5.99133,22.87964,1.12036,18.00867,1.12036,12S5.99133,1.1203,12,1.1203S22.87964,5.99133,22.87964,12 C22.87354,18.0061,18.0061,22.87354,12,22.87964z M19.50293,7.05475c-0.66852-1.01306-1.53552-1.88-2.54858-2.54852h-0.82159 v4.10785H7.89209V4.50623H7.04565c-4.13873,2.73114-5.27972,8.30029-2.54858,12.43896 c0.66852,1.01306,1.53552,1.88007,2.54858,2.54858h0.84644v-4.10791h8.24066v4.10791h0.82159 C21.09308,16.76257,22.23407,11.19348,19.50293,7.05475z M6.74689,17.87549c-3.24493-2.88354-3.5379-7.85168-0.65436-11.09668 c0.20508-0.23077,0.42358-0.44928,0.65436-0.65436V17.87549z M16.13275,14.24066H7.89209V9.73444h8.24066V14.24066z  M17.84827,17.25549c-0.18768,0.2088-0.38629,0.40747-0.59515,0.59509v-2.48962V8.61407V6.12445 C20.49121,9.03387,20.75763,14.0174,17.84827,17.25549z" />
     </svg>
   </div>
-  <h1 class="text-center -size-2xl"><?=lang('ScpAuth.login.title')?></h1>
+  <h1 class="text-center -size-2xl"><?=lang('Auth.login.title')?></h1>
   <div class="o-form mt-6 mb-0">
-    <?php if (session('error') !== null) : ?>
-      <?= frok_notification('error', session('error')) ?>
-    <?php elseif (session('errors') !== null) : ?>
-      <?= frok_notification('error', session('errors')) ?>
-    <?php endif; ?>
-
-    <?php if (session('message') !== null) : ?>
-      <?= frok_notification('success', session('message')) ?>
-    <?php endif; ?>
+    <?= session_alert('error') ?>
+    <?= session_alert('message') ?>
 
     <form action="<?= url_to('login') ?>" method="post">
       <?= csrf_field() ?>
@@ -38,7 +31,7 @@
       <!-- Email -->
       <div class="m-form-field">
         <div class="a-text-field">
-          <label for="email"><?= lang('ScpAuth.login.email') ?></label>
+          <label for="email"><?= lang('Auth.login.email') ?></label>
           <input type="email" name="email" id="email" autocomplete="email" value="<?= old('email') ?>" required />
         </div>
       </div>
@@ -46,10 +39,10 @@
       <!-- Password -->
       <div class="m-form-field">
         <div class="a-text-field a-text-field--password">
-          <label for="password"><?= lang('ScpAuth.login.password') ?></label>
+          <label for="password"><?= lang('Auth.login.password') ?></label>
           <input type="password" name="password" id="password" inputmode="text" autocomplete="current-password" required />
           <button type="button" class="a-text-field__icon-password">
-            <i class="a-icon ui-ic-watch-on" title="<?= lang('ScpAuth.login.passwordBtn') ?>"></i>
+            <i class="a-icon ui-ic-watch-on" title="<?= lang('Auth.login.passwordBtn') ?>"></i>
           </button>
         </div>
       </div>
@@ -60,23 +53,23 @@
           <div class="a-checkbox">
             <input type="checkbox" id="remember" name="remember" <?php if (old('remember')) : ?> checked<?php endif; ?>>
             <label for="remember">
-              <?= lang('ScpAuth.login.rememberMe') ?>
+              <?= lang('Auth.login.rememberMe') ?>
             </label>
           </div>
         </div>
       <?php endif; ?>
 
       <button type="submit" class="a-button a-button--primary -without-icon w-100 mt-3 mb-4">
-        <span class="a-button__label"><?= lang('ScpAuth.login.loginBtn') ?></span>
+        <span class="a-button__label"><?= lang('Auth.login.loginBtn') ?></span>
       </button>
 
     </form>
     <?php if (setting('Auth.allowMagicLinkLogins')) : ?>
-      <p class="a-link mx-auto"><a href="<?= url_to('magic-link') ?>"><?= lang('ScpAuth.login.forgotPassword') ?></a></p>
+      <p class="a-link mx-auto"><a href="<?= url_to('magic-link') ?>"><?= lang('Auth.login.forgotPassword') ?></a></p>
     <?php endif; ?>
 
     <?php if (setting('Auth.allowRegistration')): ?>
-      <p class="a-link mx-auto"><a href="<?= url_to('register') ?>"><?= lang('ScpAuth.login.register') ?></a></p>
+      <p class="a-link mx-auto"><a href="<?= url_to('register') ?>"><?= lang('Auth.login.register') ?></a></p>
     <?php endif; ?>
     <div class="d-flex justify-content-center mt-6">
       <?= view_cell('LangSwitcher/LangDropdownCell') ?>

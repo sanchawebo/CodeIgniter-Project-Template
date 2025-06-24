@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Shield\Exceptions\RuntimeException;
 use CodeIgniter\Shield\Models\UserIdentityModel;
+use Config\Services;
 
 class UserController extends BaseController
 {
@@ -21,7 +22,7 @@ class UserController extends BaseController
             ->join(
                 $identitiesTable,
                 sprintf('%1$s.user_id = %2$s.id', $identitiesTable, $userTable),
-                'inner'
+                'inner',
             )
             ->where('type', 'email_password')
             ->where('active', 0)
@@ -42,7 +43,6 @@ class UserController extends BaseController
             'id'    => 'required|numeric',
             'email' => 'required|valid_email',
         ])) {
-
             return redirect()->back()->withInput();
         }
 
@@ -57,14 +57,14 @@ class UserController extends BaseController
         model(UserIdentityModel::class)->deleteIdentitiesByType($user, $this->type);
 
         // Send the email
-        $email = \Config\Services::email();
+        $email = Services::email();
 
         $email->setMailType('html');
         $email->setFrom(setting('Email.fromEmail'), setting('Email.fromName') ?? '');
         $email->setTo($userEmail);
-        $email->setSubject(lang('ScpAuth.emailActivated.emailSubject'));
+        $email->setSubject(lang('Auth.emailActivated.emailSubject'));
         $email->setMessage(view(
-            setting('Auth.views')['action_email_activated_email']
+            setting('Auth.views')['action_email_activated_email'],
         ));
 
         if ($email->send(false) === false) {
@@ -74,7 +74,7 @@ class UserController extends BaseController
         // Clear the email
         $email->clear();
 
-        return redirect()->back()->with('actionActivateSuccess', lang('ScpAdmin.usersActivate.actionActivateSuccess'));
+        return redirect()->back()->with('actionActivateSuccess', lang('Admin.usersActivate.actionActivateSuccess'));
     }
 
     // ! POST
@@ -83,7 +83,6 @@ class UserController extends BaseController
         if (! $this->validate([
             'id' => 'required|numeric',
         ])) {
-
             return redirect()->back()->withInput();
         }
 
@@ -94,10 +93,9 @@ class UserController extends BaseController
 
         // Delete user
         if ($userModel->delete($user->id)) {
-            return redirect()->back()->with('actionDeleteSuccess', lang('ScpAdmin.usersActivate.actionDeleteSuccess'));
+            return redirect()->back()->with('actionDeleteSuccess', lang('Admin.usersActivate.actionDeleteSuccess'));
         }
 
-        return redirect()->back()->with('error', lang('ScpAdmin.usersActivate.actionFailed'));
-
+        return redirect()->back()->with('error', lang('Admin.usersActivate.actionFailed'));
     }
 }

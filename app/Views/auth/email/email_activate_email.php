@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title><?= lang('ScpAuth.emailActivate.emailSubject') ?></title>
+    <title><?= lang('Auth.emailActivate.emailSubject') ?></title>
 </head>
 
 <body>
-    <h2><?= lang('ScpAuth.emailActivate.emailSubject') ?></h1>
-    <p><?= lang('ScpAuth.emailActivate.emailBody') ?></p>
+    <h2><?= lang('Auth.emailActivate.emailSubject') ?></h1>
+    <p><?= lang('Auth.emailActivate.emailBody') ?></p>
     <p>
-        <?= lang('ScpAuth.emailActivate.emailLink') ?> <a href="<?= url_to('UserController::activateShow') ?>"><?= url_to('UserController::activateShow') ?></a>
+        <?= lang('Auth.emailActivate.emailLink') ?> <a href="<?= url_to('UserController::activateShow') ?>"><?= url_to('UserController::activateShow') ?></a>
     </p>
     <br>
     <br>

@@ -26,7 +26,7 @@ helper('url');
       </li>
       <li>
         <button id="theme-switcher" type="button" class="a-button a-button--integrated -without-label">
-          <i class="a-icon a-button__icon boschicon-bosch-ic-sun-moon" title="<?= lang('ScpBasic.themeSwitcher') ?>"></i>
+          <i class="a-icon a-button__icon boschicon-bosch-ic-sun-moon" title="<?= lang('Basic.themeSwitcher') ?>"></i>
         </button>
       </li>
     </ul>
@@ -41,7 +41,7 @@ helper('url');
 <nav class="m-side-navigation -contrast -open -detached" aria-label="Side Navigation" aria-hidden="false">
   <div class="m-side-navigation__header">
     <div class="m-side-navigation__header__label -size-l highlight">
-      <?= lang('ScpBasic.siteTitle') ?>
+      <?= lang('Basic.siteTitle') ?>
     </div>
   </div>
   <!-- Sidebar Links -->
@@ -49,8 +49,8 @@ helper('url');
     <li class="a-menu-item mb-4 <?= isExactUriSelected('admin-dashboard', true) ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('admin-dashboard') ?>" hx-boost="false" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-desktop-dashboard" title="<?= lang('ScpAdmin.dashboard.title') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.dashboard.title') ?></span>
+          <i class="a-icon boschicon-bosch-ic-desktop-dashboard" title="<?= lang('Admin.dashboard.title') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.dashboard.title') ?></span>
         </a>
       </div>
     </li>
@@ -70,7 +70,7 @@ helper('url');
             end"
           >
             <i class="a-icon boschicon-bosch-ic-people" title="Group"></i>
-            <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.users.group') ?></span>
+            <span class="a-menu-item__label"><?= lang('Admin.sidebar.users.group') ?></span>
             <i class="a-icon arrow boschicon-bosch-ic-down" title="down"></i>
           </button>
         </div>
@@ -79,7 +79,7 @@ helper('url');
             <li class="a-menu-item -indent <?= isPartialUriSelected('user-list', true, 'UserController::activateShow') ?>" role="none">
               <div class="a-menu-item__wrapper">
                 <a href="<?= route_to('user-list') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-                  <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.users.list') ?></span>
+                  <span class="a-menu-item__label"><?= lang('Admin.sidebar.users.list') ?></span>
                 </a>
               </div>
             </li>
@@ -88,7 +88,7 @@ helper('url');
             <li class="a-menu-item -indent <?= isExactUriSelected('UserController::activateShow') ?>" role="none">
               <div class="a-menu-item__wrapper">
                 <a href="<?= route_to('UserController::activateShow') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-                  <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.users.activate') ?></span>
+                  <span class="a-menu-item__label"><?= lang('Admin.sidebar.users.activate') ?></span>
                 </a>
               </div>
             </li>
@@ -100,8 +100,8 @@ helper('url');
       <li class="a-menu-item mb-3 <?= isExactUriSelected('admin-feedback') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('admin-feedback') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-wishlist" title="<?= lang('ScpAdmin.sidebar.feedback') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.feedback') ?></span>
+          <i class="a-icon boschicon-bosch-ic-wishlist" title="<?= lang('Admin.sidebar.feedback') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.feedback') ?></span>
         </a>
       </div>
       </li>
@@ -120,8 +120,8 @@ helper('url');
       <li class="a-menu-item mb-3 <?= isExactUriSelected('error-logs') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('error-logs') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-alert-error" title="<?= lang('ScpAdmin.sidebar.error-logs') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.error-logs') ?></span>
+          <i class="a-icon boschicon-bosch-ic-alert-error" title="<?= lang('Admin.sidebar.error-logs') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.error-logs') ?></span>
         </a>
       </div>
       </li>
@@ -130,8 +130,8 @@ helper('url');
       <li class="a-menu-item <?= isExactUriSelected('migration') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('migration') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-core-data" title="<?= lang('ScpAdmin.sidebar.migrations') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.migrations') ?></span>
+          <i class="a-icon boschicon-bosch-ic-core-data" title="<?= lang('Admin.sidebar.migrations') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.migrations') ?></span>
         </a>
       </div>
       </li>
@@ -140,8 +140,8 @@ helper('url');
       <li class="a-menu-item mb-3 <?= isExactUriSelected('seeding') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('seeding') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-watermelon" title="<?= lang('ScpAdmin.sidebar.seeding') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.seeding') ?></span>
+          <i class="a-icon boschicon-bosch-ic-watermelon" title="<?= lang('Admin.sidebar.seeding') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.seeding') ?></span>
         </a>
       </div>
       </li>
@@ -150,8 +150,8 @@ helper('url');
       <li class="a-menu-item <?= isExactUriSelected('PriintApiTestController::index') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('PriintApiTestController::index') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-cloud-share" title="<?= lang('ScpAdmin.sidebar.api') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.api') ?></span>
+          <i class="a-icon boschicon-bosch-ic-cloud-share" title="<?= lang('Admin.sidebar.api') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.api') ?></span>
         </a>
       </div>
       </li>
@@ -160,8 +160,8 @@ helper('url');
       <li class="a-menu-item mb-3 <?= isExactUriSelected('test') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('test') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-test-tube" title="<?= lang('ScpAdmin.sidebar.test') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.test') ?></span>
+          <i class="a-icon boschicon-bosch-ic-test-tube" title="<?= lang('Admin.sidebar.test') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.test') ?></span>
         </a>
       </div>
       </li>
@@ -170,8 +170,8 @@ helper('url');
       <li class="a-menu-item <?= isExactUriSelected('xmlPriint') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('start-import-categories') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-test-tube" title="<?= lang('ScpAdmin.sidebar.xmlPriint') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.xmlPriint') ?></span>
+          <i class="a-icon boschicon-bosch-ic-test-tube" title="<?= lang('Admin.sidebar.xmlPriint') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.xmlPriint') ?></span>
         </a>
       </div>
       </li>
@@ -180,8 +180,8 @@ helper('url');
       <li class="a-menu-item <?= isExactUriSelected('start-import-groups') ?>" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('start-import-groups') ?>" role="menuitem" class="a-menu-item__link" tabindex="-1">
-          <i class="a-icon boschicon-bosch-ic-test-tube" title="<?= lang('ScpAdmin.sidebar.xmlTest') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.xmlTest') ?></span>
+          <i class="a-icon boschicon-bosch-ic-test-tube" title="<?= lang('Admin.sidebar.xmlTest') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.xmlTest') ?></span>
         </a>
       </div>
       </li>
@@ -190,8 +190,8 @@ helper('url');
     <li class="a-menu-item mt-5" role="none">
       <div class="a-menu-item__wrapper">
         <a href="<?= route_to('dashboard') ?>" role="menuitem" class="a-menu-item__link" hx-boost="false">
-          <i class="a-icon boschicon-bosch-ic-back-menu" title="<?= lang('ScpAdmin.sidebar.back') ?>"></i>
-          <span class="a-menu-item__label"><?= lang('ScpAdmin.sidebar.back') ?></span>
+          <i class="a-icon boschicon-bosch-ic-back-menu" title="<?= lang('Admin.sidebar.back') ?>"></i>
+          <span class="a-menu-item__label"><?= lang('Admin.sidebar.back') ?></span>
         </a>
       </div>
     </li>

@@ -13,7 +13,9 @@ use CodeIgniter\Shield\Authentication\Authenticators\Session;
 use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Exceptions\LogicException;
 use CodeIgniter\Shield\Exceptions\RuntimeException;
+use CodeIgniter\Shield\Models\UserIdentityModel;
 use CodeIgniter\Shield\Traits\Viewable;
+use Config\Services;
 
 class AdminActivator implements ActionInterface
 {
@@ -54,7 +56,7 @@ class AdminActivator implements ActionInterface
         $userEmail = $user->email;
         if ($userEmail === null) {
             throw new LogicException(
-                'Email Activation needs user email address. user_id: ' . $user->id
+                'Email Activation needs user email address. user_id: ' . $user->id,
             );
         }
 
@@ -68,12 +70,12 @@ class AdminActivator implements ActionInterface
             ->join(
                 setting('Auth.tables')['groups_users'],
                 sprintf('%1$s.user_id = %2$s.id', setting('Auth.tables')['groups_users'], setting('Auth.tables')['users']),
-                'inner'
+                'inner',
             )
             ->join(
                 setting('Auth.tables')['identities'],
                 sprintf('%1$s.user_id = %2$s.id', setting('Auth.tables')['identities'], setting('Auth.tables')['users']),
-                'inner'
+                'inner',
             )
             ->where(setting('Auth.tables')['identities'] . '.type', 'email_password')
             ->groupStart()
@@ -84,16 +86,16 @@ class AdminActivator implements ActionInterface
             ->findColumn('secret');
 
         // Send the email
-        $email = \Config\Services::email();
+        $email = Services::email();
 
         $email->setMailType('html');
         $email->setFrom(setting('Email.fromEmail'), setting('Email.fromName') ?? '');
         $email->setTo($adminEmails);
-        $email->setSubject(lang('ScpAuth.emailActivate.emailSubject'));
+        $email->setSubject(lang('Auth.emailActivate.emailSubject'));
         $email->setMessage($this->view(
             setting('Auth.views')['action_email_activate_email'],
             ['userEmail' => $userEmail, 'date' => $date],
-            ['debug'     => false]
+            ['debug'     => false],
         ));
 
         if ($email->send(false) === false) {
@@ -137,7 +139,7 @@ class AdminActivator implements ActionInterface
      */
     public function createIdentity(User $user): string
     {
-        $identityModel = new \CodeIgniter\Shield\Models\UserIdentityModel();
+        $identityModel = new UserIdentityModel();
 
         // Delete any previous identities for action
         $identityModel->deleteIdentitiesByType($user, $this->type);
@@ -151,7 +153,7 @@ class AdminActivator implements ActionInterface
                 'name'  => 'register',
                 'extra' => 'Admin needs to activate this account.',
             ],
-            $generator
+            $generator,
         );
     }
 
@@ -162,7 +164,7 @@ class AdminActivator implements ActionInterface
      */
     private function replaceIdentity(User $user): bool
     {
-        $identityModel = new \CodeIgniter\Shield\Models\UserIdentityModel();
+        $identityModel = new UserIdentityModel();
 
         $ident = $identityModel->getIdentityByType($user, $this->type);
 
@@ -196,7 +198,7 @@ class AdminActivator implements ActionInterface
                 'expires' => Time::now(setting('App.appTimezone'))->addHours(24),
                 'extra'   => 'Admin needs to activate this account.',
             ],
-            $generator
+            $generator,
         );
 
         return true;

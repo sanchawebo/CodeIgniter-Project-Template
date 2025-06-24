@@ -46,7 +46,7 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     public $requestAccess = [
         'email' => [
-            'label' => 'ScpAuth.requestAccess.email',
+            'label' => 'Auth.requestAccess.email',
             'rules' => [
                 'required',
                 'max_length[254]',
@@ -56,7 +56,7 @@ class Validation extends BaseConfig
             ],
         ],
         'bosch_contact_email' => [
-            'label' => 'ScpAuth.requestAccess.boschEmail',
+            'label' => 'Auth.requestAccess.boschEmail',
             'rules' => [
                 'required',
                 'max_length[254]',
@@ -66,7 +66,7 @@ class Validation extends BaseConfig
     ];
     public $registration = [
         'email' => [
-            'label' => 'ScpAuth.register.email',
+            'label' => 'Auth.register.email',
             'rules' => [
                 'required',
                 'max_length[254]',
@@ -76,7 +76,7 @@ class Validation extends BaseConfig
             ],
         ],
         'first_name' => [
-            'label' => 'ScpAuth.register.firstName',
+            'label' => 'Auth.register.firstName',
             'rules' => [
                 'required',
                 'max_length[100]',
@@ -84,7 +84,7 @@ class Validation extends BaseConfig
             ],
         ],
         'last_name' => [
-            'label' => 'ScpAuth.register.lastName',
+            'label' => 'Auth.register.lastName',
             'rules' => [
                 'required',
                 'max_length[100]',
@@ -92,13 +92,13 @@ class Validation extends BaseConfig
             ],
         ],
         'country_code' => [
-            'label' => 'ScpAuth.register.country',
+            'label' => 'Auth.register.country',
             'rules' => [
                 'required',
             ],
         ],
         'password' => [
-            'label' => 'ScpAuth.register.password',
+            'label' => 'Auth.register.password',
             'rules' => [
                 'required',
                 'max_byte[72]',
@@ -109,7 +109,7 @@ class Validation extends BaseConfig
             ],
         ],
         'password_confirm' => [
-            'label' => 'ScpAuth.register.passwordConfirm',
+            'label' => 'Auth.register.passwordConfirm',
             'rules' => 'required|matches[password]',
         ],
     ];

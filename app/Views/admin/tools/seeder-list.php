@@ -6,10 +6,10 @@
  */
 ?>
 <?php $this->section('pageTitle') ?>
-<?= lang('ScpAdmin.seeding.pageTitle') ?>
+<?= lang('Admin.seeding.pageTitle') ?>
 <?php $this->endSection() ?>
 <?php $this->section('title') ?>
-<?= lang('ScpAdmin.seeding.title') ?>
+<?= lang('Admin.seeding.title') ?>
 <?php $this->endSection() ?>
 <!-- Change the html-title in the above section. -->
 

@@ -6,10 +6,10 @@
  */
 ?>
 <?php $this->section('pageTitle') ?>
-<?= lang('ScpAdmin.migrations.pageTitle') ?>
+<?= lang('Admin.migrations.pageTitle') ?>
 <?php $this->endSection() ?>
 <?php $this->section('title') ?>
-<?= lang('ScpAdmin.migrations.title') ?>
+<?= lang('Admin.migrations.title') ?>
 <?php $this->endSection() ?>
 <!-- Change the html-title in the above section. -->
 

@@ -13,7 +13,7 @@ class ResetPasswordController extends BaseController
         if (session('magicLogin')) {
             // Then its a redirect aka magic-link-login
             session()->removeTempdata('magicLogin');
-            session()->setFlashdata('password-info', lang('ScpAuth.resetPassword.notification'));
+            session()->setFlashdata('password-info', lang('Auth.resetPassword.notification'));
         }
 
         return view($this->viewPath . 'reset_password');

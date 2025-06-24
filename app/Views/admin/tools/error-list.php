@@ -8,10 +8,10 @@
  */
 ?>
 <?php $this->section('pageTitle') ?>
-<?= lang('ScpAdmin.error-logs.pageTitle') ?>
+<?= lang('Admin.error-logs.pageTitle') ?>
 <?php $this->endSection() ?>
 <?php $this->section('title') ?>
-<?= lang('ScpAdmin.error-logs.title') ?>
+<?= lang('Admin.error-logs.title') ?>
 <?php $this->endSection() ?>
 
 <?php $this->extend('admin/layout'); ?>
