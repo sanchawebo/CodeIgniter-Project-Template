@@ -18,10 +18,12 @@
   <title><?php $this->renderSection('title') ?></title>
 </head>
 
-<body>
-  <main role="main">
-    <?= $this->renderSection('main') ?>
-  </main>
+<body class="d-flex vh-100 align-items-center bg-primary bg-gradient">
+  <div class="container-fluid">
+    <main role="main" class="">
+      <?= $this->renderSection('main') ?>
+    </main>
+  </div>
 
   <?php $this->renderSection('pageScripts') ?>
 </body>

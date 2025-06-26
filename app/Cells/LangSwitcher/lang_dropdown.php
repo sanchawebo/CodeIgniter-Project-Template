@@ -4,31 +4,30 @@
  */
 helper('form');
 ?>
-<div class="d-block me-5">
+<div class="d-block">
     <?= validation_show_error('lang', 'single_full') ?>
     <form action="<?= route_to('post-change-lang') ?>" method="POST">
-        <div class="m-language-selector align-items-center">
-            <i class="a-icon boschicon-bosch-ic-chat-language" title="<?= lang('Basic.langSwitcher.title') ?>"></i>
+        <div class="hstack gap-2 align-items-center">
+            <i class="fa-solid fa-globe"></i>
             <?= csrf_field() ?>
-            <div class="a-dropdown">
-                <select aria-label="<?= lang('Basic.langSwitcher.title') ?>"
-                    name="lang"
-                    hx-post="<?= route_to('post-change-lang') ?>"
-                    hx-target="html">
-                    <?php foreach ($languages as $lang): ?>
-                        <?php if (session('lang') === $lang['lang_code']): ?>
+            <select class="form-select"
+                aria-label="<?= lang('Basic.langSwitcher.title') ?>"
+                name="lang"
+                hx-post="<?= route_to('post-change-lang') ?>"
+                hx-target="html">
+                <?php foreach ($languages as $lang): ?>
+                    <?php if (session('lang') === $lang['lang_code']): ?>
 
-                        <?php endif; ?>
-                        <option value="<?= $lang['lang_code'] ?>"
-                            <?= (session('lang') === $lang['lang_code']) ? 'selected' : '' ?>>
-                            <?= $lang['display_name'] ?>
-                        </option>
-                    <?php endforeach ?>
-                </select>
-            </div>
+                    <?php endif; ?>
+                    <option value="<?= $lang['lang_code'] ?>"
+                        <?= (session('lang') === $lang['lang_code']) ? 'selected' : '' ?>>
+                        <?= $lang['display_name'] ?>
+                    </option>
+                <?php endforeach ?>
+            </select>
             <noscript>
-                <button type="submit" class="a-button a-button--secondary -without-icon m-0 ms-3">
-                    <span class="a-button__label"><?= lang('Basic.langSwitcher.btn') ?></span>
+                <button type="submit" class="btn btn-secondary m-0 ms-3">
+                    <?= lang('Basic.langSwitcher.btn') ?>
                 </button>
             </noscript>
         </div>
