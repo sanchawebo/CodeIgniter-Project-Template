@@ -1,0 +1,35 @@
+// Custom Tooltips
+.tooltip-danger {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'danger')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'light')};
+}
+
+.tooltip-warning {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'warning')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'black')};
+}
+
+.tooltip-primary {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'primary')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'light')};
+}
+
+.tooltip-success {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'success')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'light')};
+}
+
+.tooltip-info {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'info')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'black')};
+}
+
+.tooltip-dark {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'dark')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'light')};
+}
+
+.tooltip-light {
+  --bs-tooltip-bg: #{map.get($theme-colors, 'light')};
+  --bs-tooltip-color: #{map.get($theme-colors, 'dark')};
+}

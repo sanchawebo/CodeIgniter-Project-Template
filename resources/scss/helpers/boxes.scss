@@ -1,0 +1,17 @@
+// Max-Width-Boxes
+$sizes: (
+  sm: 600,
+  md: 720,
+  lg: 960,
+  xl: 1140,
+  xxl: 1344,
+);
+
+@each $name, $size in $sizes {
+  .box-w-#{$name} {
+    width: 100%;
+    max-width: #{$size}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

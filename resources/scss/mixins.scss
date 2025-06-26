@@ -1,0 +1,7 @@
+@mixin transition($property, $time: 0.2s, $easing: ease-in-out) {
+  transition: $property $time $easing;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}

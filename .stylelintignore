@@ -1,6 +1,5 @@
 vendor/
 node_modules/
-resources/scss/fontawesome
-resources/scss/sweet-alert
+resources/scss/third-party/fontawesome
 **/*.js
 **/*.md

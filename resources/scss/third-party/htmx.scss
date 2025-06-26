@@ -1,0 +1,22 @@
+.htmx-indicator {
+  display: none !important;
+
+  &--table-row-group {
+    display: none !important;
+  }
+}
+
+.htmx-request {
+  &.htmx-indicator,
+  .htmx-indicator {
+    display: unset !important;
+
+    &.d-flex {
+      display: flex !important;
+    }
+
+    &--table-row-group {
+      display: table-row-group !important;
+    }
+  }
+}

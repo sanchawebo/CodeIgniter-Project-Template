@@ -1,13 +1,23 @@
+// Theme
 @import 'theme';
 @import './bootstrap-overrides';
-@import './helpers';
+
+// Helper
+@import './helpers/boxes';
+@import './helpers/grids';
+@import './helpers/text-wrap';
 
 // Theme
 @import './styles/main';
+
+// Components
+@import './components/callout';
+@import './components/selectable-tile';
+@import './components/toast';
 
 // Vanillajs Datepicker
 @import 'vanillajs-datepicker/sass/datepicker-bs5';
 
 // Fontawesome
-@import './fontawesome/fontawesome';
-@import './fontawesome/solid';
+@import './third-party/fontawesome/fontawesome';
+@import './third-party/fontawesome/solid';

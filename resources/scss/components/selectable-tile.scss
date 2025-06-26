@@ -1,0 +1,115 @@
+@use '../mixins.scss' as mixin;
+@use 'sass:map';
+
+$selectable-tile-space-around: 0.75rem;
+
+.selectable-tile {
+  display: block;
+
+  .selectable-tile-label {
+    @include mixin.transition(all, 0.3s, ease-out);
+
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: map.get($theme-colors, 'light');
+    border: 1px solid map.get($theme-colors, 'secondary');
+    border-radius: 0.25em;
+    outline: none;
+
+    &:has(.selectable-tile-input:checked) {
+      border: 1px solid map.get($theme-colors, 'primary');
+      outline: 1px solid map.get($theme-colors, 'primary');
+    }
+
+    &:has(.selectable-tile-input:disabled) {
+      border: 1px solid map.get($theme-colors, 'secondary-lighter');
+      cursor: default;
+      opacity: $form-check-label-disabled-opacity;
+    }
+
+    &:has(.selectable-tile-input:focus),
+    &:has(.selectable-tile-input:not(:disabled):hover) {
+      box-shadow: $form-check-input-focus-box-shadow;
+    }
+
+    .selectable-tile-input {
+      @include mixin.transition(all, 0.3s, ease-out);
+
+      margin: $selectable-tile-space-around;
+      height: 1.5rem;
+      width: 1.5rem;
+      appearance: none;
+      background-color: var(--#{$prefix}form-check-bg);
+      background-image: var(--#{$prefix}form-check-bg-image);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border: $form-check-input-border;
+      print-color-adjust: exact; // Keep themed appearance for print
+      border-radius: 0.25em;
+
+      &:active {
+        filter: $form-check-input-active-filter;
+      }
+
+      &:focus {
+        border-color: $form-check-input-focus-border;
+        outline: 0;
+      }
+
+      &:checked {
+        background-color: $form-check-input-checked-bg-color;
+        border-color: $form-check-input-checked-border-color;
+
+        --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image)};
+      }
+
+      &:disabled {
+        pointer-events: none;
+        filter: none;
+        opacity: $form-check-input-disabled-opacity;
+      }
+    }
+
+    .selectable-tile-image {
+      border-radius: 0.25rem;
+      background-color: map.get($theme-colors, 'light');
+      display: block;
+      height: 100%;
+      height: 180px;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: relative;
+      transition: all 0.2s;
+      transform-origin: top;
+
+      &:hover,
+      &:focus {
+        transition: all 0.2s 0.5s;
+        scale: 2;
+        z-index: 1;
+        border: map.get($theme-colors, 'secondary-lightish') solid 1px;
+      }
+    }
+
+    .selectable-tile-text {
+      line-height: 1.15;
+      padding: 0.5rem $selectable-tile-space-around $selectable-tile-space-around;
+    }
+
+    .selectable-tile-title {
+      font-size: larger;
+      font-weight: bold;
+      line-height: 1.15;
+      padding: 0.5rem $selectable-tile-space-around $selectable-tile-space-around;
+
+      &:has(~ .selectable-tile-text) {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
