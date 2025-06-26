@@ -23,6 +23,9 @@
   <body
     _="on every htmx:beforeSend in <button:not(.no-disable)/> tell it toggle @disabled until htmx:afterOnLoad"
   >
+    <?php if (! setting('Site.siteOnline')): ?>
+      <?= view('admin/_offlineBanner') ?>
+    <?php endif; ?>
     <div id="content-wrapper" class="bg-body">
       <?= $this->include('templates/header') ?>
       <main role="main" class="pt-8">
@@ -31,6 +34,7 @@
       <?= $this->include('templates/footer') ?>
     </div>
 
+    <div id="alerts-wrapper" class="position-fixed z-index-1100 bottom-0 end-0 pe-none p-3"></div>
     <script>
         document.querySelector('.alert.alert-danger')?.scrollIntoView({behavior: 'smooth'});
     </script>

@@ -41,9 +41,9 @@ class Autoload extends AutoloadConfig
         APP_NAMESPACE    => APPPATH,
         'Authentication' => APPPATH . 'Authentication',
         'Config'         => APPPATH . 'Config',
-        'Logs'           => APPPATH . 'Modules' . DIRECTORY_SEPARATOR . 'Logs',
-        'Mpr\UserMgmt'   => ROOTPATH . 'mpr/UserMgmt',
-        'Mpr\Settings'   => ROOTPATH . 'mpr/Settings',
+        'Logs'           => MODULEPATH . 'Logs',
+        'UserMgmt'       => MODULEPATH . 'UserMgmt',
+        'Settings'       => MODULEPATH . 'Settings',
     ];
 
     /**

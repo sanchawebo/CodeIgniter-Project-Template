@@ -15,6 +15,9 @@
  */
 defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
 defined('SITE_NAME')     || define('SITE_NAME', 'DUMMY Project');
+defined('ADMIN_AREA')    || define('ADMIN_AREA', 'admin');
+
+defined('MODULEPATH') || define('MODULEPATH', APPPATH . 'Modules/');
 
 /*
  | --------------------------------------------------------------------------

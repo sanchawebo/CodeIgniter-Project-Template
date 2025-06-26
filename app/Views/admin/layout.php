@@ -36,9 +36,7 @@
       </main>
     </div>
 
-    <div id="alerts-wrapper" class="position-fixed z-index-1200 bottom-0 end-0 p-3">
-      {alerts}
-    </div>
+    <div id="alerts-wrapper" class="position-fixed z-index-1100 bottom-0 end-0 pe-none p-3"></div>
     <?= script_tag('assets/frok/v01-frontend-kit.js') ?>
     <?= $this->renderSection('pageScripts') ?>
   </body>
