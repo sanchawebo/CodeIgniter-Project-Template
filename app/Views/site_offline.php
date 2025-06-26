@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
 
-    <title>Whoops!</title>
+    <title>The site is temporarily offline | <?= SITE_NAME ?></title>
 
     <style type="text/css">
         :root {
@@ -54,9 +54,9 @@
 
     <div class="container text-center">
 
-        <h1 class="headline"><?= setting('Site.siteName') ?></h1>
+        <h1 class="headline"><?= SITE_NAME ?></h1>
 
-        <p class="lead">The site is temporarily offline. Please check back a little bit later.</p>
+        <p class="lead">The site is temporarily offline. Please check back later.</p>
 
     </div>
 

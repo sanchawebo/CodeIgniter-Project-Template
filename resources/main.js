@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './js/htmx.js';
+import './js/password.js';
 
 import { Alert, Modal, Dropdown, Offcanvas, Collapse, Tab, Tooltip } from 'bootstrap';
 import swal from 'sweetalert';

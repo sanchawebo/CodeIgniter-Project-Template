@@ -4,7 +4,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -15,7 +15,8 @@
   <?= viteTags('css'); ?>
   <?= viteTags('js'); ?>
   <script src="/assets/js/_hyperscript.min.js"></script>
-  <title><?php $this->renderSection('title') ?></title>
+  <script src="/assets/js/theme-switcher.js"></script>
+  <title><?= $this->renderSection('title') ?></title>
 </head>
 
 <body class="d-flex vh-100 align-items-center bg-primary bg-gradient">
@@ -25,7 +26,7 @@
     </main>
   </div>
 
-  <?php $this->renderSection('pageScripts') ?>
+  <?= $this->renderSection('pageScripts') ?>
 </body>
 
 </html>

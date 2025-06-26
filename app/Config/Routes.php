@@ -9,6 +9,7 @@ use App\Controllers\Admin\TestController;
 use App\Controllers\Home;
 use App\Controllers\LanguageController;
 use App\Controllers\LoginController;
+use App\Controllers\ProfileController;
 use App\Controllers\RegisterController;
 use App\Controllers\ResetPasswordController;
 use App\Controllers\UserController;
@@ -48,6 +49,13 @@ $routes->group('admin', ['filter' => 'permission:admin.access'], static function
     $routes->get('error-logs/(:segment)', [ErrorLogController::class, 'view'], ['filter' => 'permission:admin.errors', 'as' => 'single-log']);
     $routes->get('error-logs', [ErrorLogController::class, 'index'], ['filter' => 'permission:admin.errors', 'as' => 'error-logs']);
     $routes->get('/', [AdminController::class, 'index'], ['as' => 'admin-dashboard']);
+});
+
+$routes->group('profile', static function (RouteCollection $routes) {
+    $routes->post('settings/password', [ProfileController::class, 'tabSettingsPassword'], ['as' => 'profile-tab-settings-password']);
+    $routes->post('settings/lang', [ProfileController::class, 'tabSettingsLang'], ['as' => 'profile-tab-settings-lang']);
+    $routes->get('settings', [ProfileController::class, 'tabSettings'], ['as' => 'profile-tab-settings']);
+    $routes->get('/', [ProfileController::class, 'tabSettings'], ['as' => 'profile']);
 });
 
 $routes->get('change-language/(:alpha)', [LanguageController::class, 'changeLang'], ['as' => 'change-lang']);

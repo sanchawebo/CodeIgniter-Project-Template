@@ -44,26 +44,6 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
-    public $requestAccess = [
-        'email' => [
-            'label' => 'Auth.requestAccess.email',
-            'rules' => [
-                'required',
-                'max_length[254]',
-                'valid_email',
-                'is_unique[users.username]',
-                'is_unique[auth_identities.secret]',
-            ],
-        ],
-        'bosch_contact_email' => [
-            'label' => 'Auth.requestAccess.boschEmail',
-            'rules' => [
-                'required',
-                'max_length[254]',
-                'valid_email',
-            ],
-        ],
-    ];
     public $registration = [
         'email' => [
             'label' => 'Auth.register.email',

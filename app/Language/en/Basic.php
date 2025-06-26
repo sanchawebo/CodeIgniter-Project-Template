@@ -14,8 +14,9 @@ return [
         'btn'            => 'Change',
     ],
     'menu' => [
-        'admin'  => 'Admin-Dashboard',
-        'logout' => 'Logout',
+        'dashboard' => 'Dashboard',
+        'admin'     => 'Admin-Dashboard',
+        'logout'    => 'Logout',
     ],
     'comingSoon'    => 'Coming soon',
     'continueBtn'   => 'Continue',

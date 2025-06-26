@@ -10,7 +10,6 @@ return [
         'loginBtn'       => 'Login',
         'rememberMe'     => 'Remember me?',
         'forgotPassword' => 'Forgot Password',
-        'requestAccess'  => 'Request Access',
         'register'       => 'Register',
     ],
     'magicLink' => [
@@ -61,15 +60,6 @@ return [
         'emailSubject' => SITE_NAME . ': Account Activation Successful',
         'emailBody'    => 'Your ' . SITE_NAME . ' user account was authorised. You can now login to the site using the link below.',
         'emailLink'    => 'Link:',
-    ],
-    'requestAccess' => [
-        'pageTitle'  => 'Request Access | ' . SITE_NAME,
-        'title'      => 'No access? Sign up now!',
-        'text'       => 'Please populate the mandatory fields below. With a click on the \'Request Access\' button, you agree that your personal data will be processed. Please note: users who have not logged in for more than 12 months will be deleted and will have to register again.',
-        'email'      => 'Your E-Mail address',
-        'boschEmail' => 'E-Mail of your Bosch contact person',
-        'requestBtn' => 'Request Access',
-        'back'       => 'Back to Login',
     ],
     'resetPassword' => [
         'pageTitle'    => 'Reset Password | ' . SITE_NAME,

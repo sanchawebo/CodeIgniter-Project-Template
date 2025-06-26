@@ -9,13 +9,14 @@ if (! function_exists('session_alert')) {
         if (session($type) === null) {
             return '';
         }
+        $message = session($type);
+        session()->remove($type);
         $type = match ($type) {
             'success' => 'success',
             'error'   => 'danger',
+            'message' => 'info',
             default   => $type,
         };
-        $message = session($type);
-        session()->remove($type);
         if ($faIcon) {
             $faIcon = '<i class="' . $faIcon . '"></i>';
             $extraClasses .= " {$type}-icon";

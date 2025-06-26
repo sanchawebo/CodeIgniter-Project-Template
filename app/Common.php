@@ -105,7 +105,7 @@ if (! function_exists('isExactUriSelected')) {
             return $result;
         }
 
-        return $result ? '-selected' : '';
+        return $result ? 'active' : '';
     }
 }
 
@@ -137,7 +137,7 @@ if (! function_exists('isPartialUriSelected')) {
             return $result;
         }
 
-        return $result ? '-selected' : '';
+        return $result ? 'active' : '';
     }
 }
 

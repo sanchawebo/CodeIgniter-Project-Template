@@ -4,7 +4,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -15,9 +15,10 @@
   <?= link_tag('assets/frok/v01-frontend-kit.css') ?>
   <?= viteTags('css'); ?>
   <?= viteTags('js'); ?>
-  <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+  <script src="/assets/js/_hyperscript.min.js"></script>
+  <script src="/assets/js/theme-switcher.js"></script>
   <?php $this->fragment('pageTitle') ?>
-    <title><?php $this->renderSection('pageTitle') ?></title>
+    <title><?= $this->renderSection('pageTitle') ?></title>
   <?php $this->endFragment() ?>
 </head>
 
@@ -31,7 +32,7 @@
     <div id="admin-wrapper">
       <?= $this->include('admin/header') ?>
       <main role="main">
-        <div class="e-container"><?php $this->renderSection('main') ?></div>
+        <div class="e-container"><?= $this->renderSection('main') ?></div>
       </main>
     </div>
 
@@ -39,7 +40,7 @@
       {alerts}
     </div>
     <?= script_tag('assets/frok/v01-frontend-kit.js') ?>
-    <?php $this->renderSection('pageScripts') ?>
+    <?= $this->renderSection('pageScripts') ?>
   </body>
 <?php $this->endFragment() ?>
 

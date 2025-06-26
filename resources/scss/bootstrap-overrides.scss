@@ -109,6 +109,32 @@ $utilities: map.merge(
           responsive: true,
         )
       ),
+    'max-width': (
+      property: max-width,
+      class: mw,
+      values: (
+        75: 75%,
+        100: 100%,
+      ),
+    ),
+    'max-viewport-height': (
+      property: max-height,
+      class: max-vh,
+      values: (
+        100: 100vh,
+      ),
+    ),
+    'flex-basis': (
+      property: flex-basis,
+      class: flex-basis,
+      values: (
+        0: 0%,
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+      ),
+    ),
     'display':
       map.merge(
         map.get($utilities, 'display'),

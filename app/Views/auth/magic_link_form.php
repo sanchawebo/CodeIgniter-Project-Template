@@ -9,32 +9,26 @@
 
 <?php $this->section('main') ?>
 
-<div class="box-w-600 mx-auto max-vh-100 p-5 overflow-y-auto -primary">
-    <?= frok_link(route_to('login'), lang('Auth.requestAccess.back'), 'boschicon-bosch-ic-arrow-left', true, true) ?>
-    <h1 class="text-center -size-2xl"><?= lang('Auth.magicLink.title') ?></h1>
-    <div class="o-form m-0">
-        <?php if (session('error') !== null) : ?>
-            <?= frok_notification('error', session('error')) ?>
-        <?php elseif (session('errors') !== null) : ?>
-            <?= frok_notification('error', session('errors')) ?>
-        <?php endif; ?>
-        <form action="<?= url_to('magic-link') ?>" method="post">
-            <?= csrf_field() ?>
+<div class="box-w-sm mx-auto max-vh-100 p-5 overflow-y-auto border border-secondary text-bg-light rounded">
+    <a href="<?= route_to('login') ?>" class="btn btn-link mb-3">
+        <i class="fas fa-arrow-left-long me-2"></i><?= lang('Auth.magicLink.back') ?>
+    </a>
+    <h1 class="text-center"><?= lang('Auth.magicLink.title') ?></h1>
+    <?= session_alert('error') ?>
+    <form action="<?= url_to('magic-link') ?>" method="post">
+        <?= csrf_field() ?>
 
-            <p class="text-center"><?= lang('Auth.magicLink.text') ?></p>
-            <!-- Email -->
-            <div class="m-form-field">
-                <div class="a-text-field">
-                    <label for="email"><?= lang('Auth.magicLink.email') ?> *</label>
-                    <input type="email" name="email" id="email" autocomplete="email" value="<?= old('email', auth()->user()->email ?? null) ?>" required />
-                </div>
-            </div>
+        <p class="text-center"><?= lang('Auth.magicLink.text') ?></p>
+        <!-- Email -->
+        <div class="mb-3">
+            <label class="form-label" for="email"><?= lang('Auth.magicLink.email') ?> *</label>
+            <input class="form-control" type="email" name="email" id="email" autocomplete="email" value="<?= old('email', auth()->user()->email ?? null) ?>" required />
+        </div>
 
-            <button type="submit" class="a-button a-button--primary -without-icon w-100 mb-0">
-                <span class="a-button__label"><?= lang('Auth.magicLink.sendBtn') ?></span>
-            </button>
+        <button type="submit" class="btn btn-primary w-100 mt-5">
+            <?= lang('Auth.magicLink.sendBtn') ?>
+        </button>
 
-        </form>
-    </div>
+    </form>
 </div>
 <?php $this->endSection() ?>

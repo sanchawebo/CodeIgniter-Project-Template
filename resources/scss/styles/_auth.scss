@@ -1,0 +1,42 @@
+#pw-message,
+#pw-confirm-message {
+  display: block;
+  position: relative;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  margin-block: 0.5rem;
+  padding-block-end: 0.5rem;
+
+  p {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    padding: 0 1rem;
+    margin-inline-start: 0.5rem;
+    margin-block: 0.5rem;
+
+    &:first-child:not(#match) {
+      margin-inline-start: 0;
+      padding-inline-start: 0;
+    }
+  }
+
+  .valid {
+    color: var(--bs-success);
+  }
+
+  .valid::before {
+    position: relative;
+    left: -1rem;
+    content: '✔';
+  }
+
+  .invalid {
+    color: inherit;
+  }
+
+  .invalid::before {
+    position: relative;
+    left: -1rem;
+    content: '×';
+  }
+}

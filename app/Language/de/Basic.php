@@ -14,8 +14,9 @@ return [
         'btn'            => 'Wechseln',
     ],
     'menu' => [
-        'admin'  => 'Admin-Dashboard',
-        'logout' => 'Abmelden',
+        'dashboard' => 'Dashboard',
+        'admin'     => 'Admin-Dashboard',
+        'logout'    => 'Abmelden',
     ],
     'comingSoon'    => 'Demnächst verfügbar',
     'continueBtn'   => 'Weiter',

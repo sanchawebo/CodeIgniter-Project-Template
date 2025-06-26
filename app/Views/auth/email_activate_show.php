@@ -10,8 +10,8 @@
 
 <?php $this->section('main') ?>
 
-<div class="box-w-540 mx-auto max-vh-100 p-5 overflow-y-auto -primary">
-    <h1 class="text-center -size-2xl mb-3"><?= lang('Auth.emailActivate.title') ?></h1>
+<div class="box-w-sm mx-auto max-vh-100 p-5 overflow-y-auto border border-secondary text-bg-light rounded">
+    <h1 class="text-center mb-3"><?= lang('Auth.emailActivate.title') ?></h1>
 
     <p class="text-center">
         <?= lang('Auth.emailActivate.body') ?><br>

@@ -9,7 +9,7 @@ helper('url');
   <div class="o-minimal-header__supergraphic"></div>
   <div class="o-minimal-header__top ps-0">
     <div class="o-minimal-header__title ps-3 ms-0">
-      <?php $this->renderSection('title') ?>
+      <?= $this->renderSection('title') ?>
     </div>
     <!-- Header Buttons -->
     <ul class="o-minimal-header__actions">

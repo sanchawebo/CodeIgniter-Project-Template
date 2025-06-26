@@ -10,7 +10,6 @@ return [
         'loginBtn'       => 'Anmelden',
         'rememberMe'     => 'Angemeldet bleiben?',
         'forgotPassword' => 'Passwort vergessen',
-        'requestAccess'  => 'Zugang beantragen',
         'register'       => 'Registrierung',
     ],
     'magicLink' => [
@@ -61,15 +60,6 @@ return [
         'emailSubject' => SITE_NAME . ': Kontoaktivierung erfolgreich',
         'emailBody'    => 'Ihr Benutzerkonto für ' . SITE_NAME . ' wurde autorisiert. Sie können sich jetzt über den folgenden Link auf der Website anmelden.',
         'emailLink'    => 'Link:',
-    ],
-    'requestAccess' => [
-        'pageTitle'  => 'Zugang beantragen | ' . SITE_NAME,
-        'title'      => 'Kein Zugang? Jetzt registrieren!',
-        'text'       => 'Bitte füllen Sie die Pflichtfelder unten aus. Mit einem Klick auf die Schaltfläche \'Zugang beantragen\' stimmen Sie der Verarbeitung Ihrer persönlichen Daten zu. Bitte beachten Sie: Benutzer, die sich seit mehr als 12 Monaten nicht angemeldet haben, werden gelöscht und müssen sich erneut registrieren.',
-        'email'      => 'Ihre E-Mail-Adresse',
-        'boschEmail' => 'E-Mail Ihres Bosch-Kontakts',
-        'requestBtn' => 'Zugang beantragen',
-        'back'       => 'Zurück zur Anmeldung',
     ],
     'resetPassword' => [
         'pageTitle'    => 'Passwort zurücksetzen | ' . SITE_NAME,
