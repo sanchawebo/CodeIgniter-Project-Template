@@ -41,7 +41,7 @@ helper('url');
 <nav class="m-side-navigation -contrast -open -detached" aria-label="Side Navigation" aria-hidden="false">
   <div class="m-side-navigation__header">
     <div class="m-side-navigation__header__label -size-l highlight">
-      <?= lang('Basic.siteTitle') ?>
+      <?= SITE_NAME ?>
     </div>
   </div>
   <!-- Sidebar Links -->

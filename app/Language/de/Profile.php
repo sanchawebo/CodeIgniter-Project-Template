@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'pageTitle' => 'Profil | ' . lang('Basic.siteTitle'),
+    'pageTitle' => 'Profil | ' . SITE_NAME,
     'title'     => 'Profil',
     'tabs'      => [
         'settings' => 'Einstellungen',

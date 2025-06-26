@@ -2,8 +2,8 @@
 
 return [
     'login' => [
-        'pageTitle'      => 'Anmelden | ' . lang('Basic.siteTitle'),
-        'title'          => 'PDF Generator',
+        'pageTitle'      => 'Anmelden | ' . SITE_NAME,
+        'title'          => SITE_NAME,
         'email'          => 'E-Mail-Adresse',
         'password'       => 'Passwort',
         'passwordBtn'    => 'Passwort anzeigen/verstecken',
@@ -14,7 +14,7 @@ return [
         'register'       => 'Registrierung',
     ],
     'magicLink' => [
-        'pageTitle' => 'Passworthilfe | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Passworthilfe | ' . SITE_NAME,
         'title'     => 'Passworthilfe',
         'text'      => 'Wenn Sie Ihr Passwort vergessen haben, geben Sie bitte Ihre Anmelde-E-Mail-Adresse in das Textfeld unten ein. Ein Link, mit dem Sie sich anmelden können, um Ihr Passwort zurückzusetzen, wird dann an diese Adresse gesendet.',
         'email'     => 'E-Mail-Adresse',
@@ -22,7 +22,7 @@ return [
         'back'      => 'Zurück zur Anmeldung',
     ],
     'register' => [
-        'pageTitle'        => 'Registrieren | ' . lang('Basic.siteTitle'),
+        'pageTitle'        => 'Registrieren | ' . SITE_NAME,
         'title'            => 'Registrieren Sie Ihr Konto',
         'text'             => 'Bitte füllen Sie die Pflichtfelder unten aus. Mit einem Klick auf die Schaltfläche \'Registrieren\' stimmen Sie der Verarbeitung Ihrer persönlichen Daten zu. Bitte beachten Sie: Benutzer, die sich seit mehr als 12 Monaten nicht angemeldet haben, werden gelöscht und müssen sich erneut registrieren.',
         'email'            => 'Ihre E-Mail-Adresse',
@@ -50,20 +50,20 @@ return [
         'back'            => 'Zurück zur Anmeldung',
     ],
     'emailActivate' => [
-        'pageTitle'    => 'Kontoaktivierung | ' . lang('Basic.siteTitle'),
+        'pageTitle'    => 'Kontoaktivierung | ' . SITE_NAME,
         'title'        => 'Kontoaktivierung',
         'body'         => 'Ein Administrator muss Ihr Konto autorisieren, bevor Sie diese Website nutzen können. Sie werden über diese E-Mail-Adresse benachrichtigt:',
-        'emailSubject' => 'Bosch PDF Generator: Anforderung zur Kontoaktivierung',
+        'emailSubject' => SITE_NAME . ': Anforderung zur Kontoaktivierung',
         'emailBody'    => 'Ein neu registrierter Benutzer wartet auf die Kontoaktivierung.',
         'emailLink'    => 'Aktivieren Sie das Konto hier:',
     ],
     'emailActivated' => [
-        'emailSubject' => 'Bosch PDF Generator: Kontoaktivierung erfolgreich',
-        'emailBody'    => 'Ihr Benutzerkonto für den Bosch PDF Generator wurde autorisiert. Sie können sich jetzt über den folgenden Link auf der Website anmelden.',
+        'emailSubject' => SITE_NAME . ': Kontoaktivierung erfolgreich',
+        'emailBody'    => 'Ihr Benutzerkonto für ' . SITE_NAME . ' wurde autorisiert. Sie können sich jetzt über den folgenden Link auf der Website anmelden.',
         'emailLink'    => 'Link:',
     ],
     'requestAccess' => [
-        'pageTitle'  => 'Zugang beantragen | ' . lang('Basic.siteTitle'),
+        'pageTitle'  => 'Zugang beantragen | ' . SITE_NAME,
         'title'      => 'Kein Zugang? Jetzt registrieren!',
         'text'       => 'Bitte füllen Sie die Pflichtfelder unten aus. Mit einem Klick auf die Schaltfläche \'Zugang beantragen\' stimmen Sie der Verarbeitung Ihrer persönlichen Daten zu. Bitte beachten Sie: Benutzer, die sich seit mehr als 12 Monaten nicht angemeldet haben, werden gelöscht und müssen sich erneut registrieren.',
         'email'      => 'Ihre E-Mail-Adresse',
@@ -72,7 +72,7 @@ return [
         'back'       => 'Zurück zur Anmeldung',
     ],
     'resetPassword' => [
-        'pageTitle'    => 'Passwort zurücksetzen | ' . lang('Basic.siteTitle'),
+        'pageTitle'    => 'Passwort zurücksetzen | ' . SITE_NAME,
         'title'        => 'Passwort zurücksetzen',
         'notification' => 'Legen Sie hier ein neues Passwort für Ihren Zugang fest.',
     ],

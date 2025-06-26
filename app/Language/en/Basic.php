@@ -2,9 +2,8 @@
 
 // cSpell: ignore segcat
 return [
-    'logoTitle'     => 'Bosch Logo',
-    'siteTitle'     => 'Bosch PDF Generator',
-    'pageTitle'     => 'Website | Bosch PDF Generator',
+    'siteTitle'     => SITE_NAME,
+    'pageTitle'     => 'Website | ' . SITE_NAME,
     'title'         => 'Website',
     'themeSwitcher' => 'Toggle Dark/Light Mode',
     'langSwitcher'  => [
@@ -15,16 +14,8 @@ return [
         'btn'            => 'Change',
     ],
     'menu' => [
-        'dashboard'    => 'Dashboard',
-        'segcat'       => 'Accessory Leaflet',
-        'manual'       => 'Manual Creation',
-        'excel'        => 'Excel Import',
-        'reuse'        => 'Reuse Order',
-        'orderHistory' => 'Order History',
-        'news'         => 'News',
-        'support'      => 'Support',
-        'admin'        => 'Admin-Dashboard',
-        'logout'       => 'Logout',
+        'admin'  => 'Admin-Dashboard',
+        'logout' => 'Logout',
     ],
     'comingSoon'    => 'Coming soon',
     'continueBtn'   => 'Continue',

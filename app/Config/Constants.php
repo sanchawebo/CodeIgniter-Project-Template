@@ -14,7 +14,7 @@
  | existing namespaces of App\* namespaced-classes.
  */
 defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
-defined('SITE_NAME')     || define('SITE_NAME', 'Site Name');
+defined('SITE_NAME')     || define('SITE_NAME', 'DUMMY Project');
 
 /*
  | --------------------------------------------------------------------------

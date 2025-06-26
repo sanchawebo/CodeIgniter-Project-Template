@@ -2,8 +2,8 @@
 
 return [
     'login' => [
-        'pageTitle'      => 'Login | ' . lang('Basic.siteTitle'),
-        'title'          => 'PDF Generator',
+        'pageTitle'      => 'Login | ' . SITE_NAME,
+        'title'          => SITE_NAME,
         'email'          => 'E-Mail address',
         'password'       => 'Password',
         'passwordBtn'    => 'Show/Hide Password',
@@ -14,7 +14,7 @@ return [
         'register'       => 'Register',
     ],
     'magicLink' => [
-        'pageTitle' => 'Password Help | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Password Help | ' . SITE_NAME,
         'title'     => 'Password Help',
         'text'      => 'If you have forgotten your password, enter your login e-mail address in the text field below. A link with which you can log in to reset your password will then be sent to this address.',
         'email'     => 'E-Mail address',
@@ -22,7 +22,7 @@ return [
         'back'      => 'Back to Login',
     ],
     'register' => [
-        'pageTitle'        => 'Register | ' . lang('Basic.siteTitle'),
+        'pageTitle'        => 'Register | ' . SITE_NAME,
         'title'            => 'Register your Account',
         'text'             => 'Please populate the mandatory fields below. With a click on the \'Register\' button, you agree that your personal data will be processed. Please note: users who have not logged in for more than 12 months will be deleted and will have to register again.',
         'email'            => 'Your E-Mail address',
@@ -50,20 +50,20 @@ return [
         'back'            => 'Back to Login',
     ],
     'emailActivate' => [
-        'pageTitle'    => 'Account Activation | ' . lang('Basic.siteTitle'),
+        'pageTitle'    => 'Account Activation | ' . SITE_NAME,
         'title'        => 'Account Activation',
         'body'         => 'An admin has to authorise your account before you can use this site. You will be notified via this email-address:',
-        'emailSubject' => 'Bosch PDF Generator: Account Activation Request',
+        'emailSubject' => SITE_NAME . ': Account Activation Request',
         'emailBody'    => 'A newly registered user awaits account activation.',
         'emailLink'    => 'Activate the account here:',
     ],
     'emailActivated' => [
-        'emailSubject' => 'Bosch PDF Generator: Account Activation Successful',
-        'emailBody'    => 'Your Bosch PDF Generator user account was authorised. You can now login to the site using the link below.',
+        'emailSubject' => SITE_NAME . ': Account Activation Successful',
+        'emailBody'    => 'Your ' . SITE_NAME . ' user account was authorised. You can now login to the site using the link below.',
         'emailLink'    => 'Link:',
     ],
     'requestAccess' => [
-        'pageTitle'  => 'Request Access | ' . lang('Basic.siteTitle'),
+        'pageTitle'  => 'Request Access | ' . SITE_NAME,
         'title'      => 'No access? Sign up now!',
         'text'       => 'Please populate the mandatory fields below. With a click on the \'Request Access\' button, you agree that your personal data will be processed. Please note: users who have not logged in for more than 12 months will be deleted and will have to register again.',
         'email'      => 'Your E-Mail address',
@@ -72,7 +72,7 @@ return [
         'back'       => 'Back to Login',
     ],
     'resetPassword' => [
-        'pageTitle'    => 'Reset Password | ' . lang('Basic.siteTitle'),
+        'pageTitle'    => 'Reset Password | ' . SITE_NAME,
         'title'        => 'Reset Password',
         'notification' => 'Set a new password for your account here.',
     ],

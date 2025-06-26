@@ -16,62 +16,62 @@ return [
         'xmlPriint'      => 'Import Categories Test',
         'xmlTest'        => 'Import MPR XML Test',
 
-        'back' => 'Zurück zum PDF Generator',
+        'back' => 'Zurück zu ' . SITE_NAME,
     ],
     'dashboard' => [
-        'pageTitle' => 'Admin-Dashboard | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Admin-Dashboard | ' . SITE_NAME,
         'title'     => 'Admin-Dashboard',
     ],
     'feedback' => [
-        'pageTitle' => 'Feedback Evaluation | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Feedback Evaluation | ' . SITE_NAME,
         'title'     => 'Feedback Evaluation',
         'desc'      => 'Benutzer-Feedback anzeigen.',
     ],
     'adminTools' => 'Admin Tools',
     'error-logs' => [
-        'pageTitle' => 'Fehlerprotokolle | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Fehlerprotokolle | ' . SITE_NAME,
         'title'     => 'Fehlerprotokolle',
         'desc'      => 'PHP-Fehler anzeigen.',
     ],
     'migrations' => [
-        'pageTitle' => 'Migrationen | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Migrationen | ' . SITE_NAME,
         'title'     => 'Migrationen',
         'desc'      => 'Führen Sie DB-Migrationen aus.',
     ],
     'seeding' => [
-        'pageTitle' => 'Seeding | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Seeding | ' . SITE_NAME,
         'title'     => 'Seeding',
         'desc'      => 'Führen Sie DB-Seeder aus.',
     ],
     'api' => [
-        'pageTitle' => 'Priint API-Tests | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Priint API-Tests | ' . SITE_NAME,
         'title'     => 'Priint API-Tests',
     ],
     'test' => [
-        'pageTitle' => 'Test | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Test | ' . SITE_NAME,
         'title'     => 'Test',
     ],
     'xmlPriint' => [
-        'pageTitle' => 'Import Categories | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Import Categories | ' . SITE_NAME,
         'title'     => 'Import Categories',
     ],
     'xmlTest' => [
-        'pageTitle' => 'Import MPR-XML | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Import MPR-XML | ' . SITE_NAME,
         'title'     => 'Import MPR-XML',
     ],
     'imgComp' => [
-        'pageTitle' => 'ProductImages-Compression | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'ProductImages-Compression | ' . SITE_NAME,
         'title'     => 'ProductImages-Compression',
     ],
     'language' => [
-        'pageTitle' => 'Sprachen | ' . lang('Basic.siteTitle'),
+        'pageTitle' => 'Sprachen | ' . SITE_NAME,
         'title'     => 'Sprachen',
     ],
     'users' => [
         'desc' => 'Benutzer auflisten. E-Mail, Passwort, Namen, Berechtigungen und Benutzerrollen bearbeiten.',
     ],
     'usersActivate' => [
-        'pageTitle'             => 'Benutzer aktivieren | ' . lang('Basic.siteTitle'),
+        'pageTitle'             => 'Benutzer aktivieren | ' . SITE_NAME,
         'title'                 => 'Benutzer aktivieren',
         'desc'                  => 'Ausstehende Beitrittsanfragen freigeben.',
         'heading'               => 'Ausstehende Benutzer:',
