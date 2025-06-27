@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $content-bg: #fff;
 $g-body-bg: hsl(0deg 0% 95%); // BS uses $body-bg
 
@@ -13,51 +15,31 @@ $dark: #343a40;
 
 // BS Theme-Colors
 $theme-colors: (
-  'primary-dark': #00436f,
+  'primary-dark': color.adjust($primary, $lightness: -12%),
   'primary': $primary,
-  'primary-light': #bfdaeb,
-  'primary-lighter': #006aaf25,
-  'primary-subtle': #cce1ef,
+  'primary-light': color.adjust($primary, $lightness: 24%),
+  'primary-lighter': color.adjust($primary, $lightness: 36%),
+  'primary-subtle': color.adjust($primary, $lightness: 48%),
   'secondary': $secondary,
-  'secondary-lightish': #d5d5d5,
-  'secondary-light': #e8e8e8,
-  'secondary-lighter': #f4f4f4,
-  'success-dark': #07391a,
+  'secondary-lightish': color.adjust($secondary, $lightness: 12%),
+  'secondary-light': color.adjust($secondary, $lightness: 24%),
+  'secondary-lighter': color.adjust($secondary, $lightness: 36%),
+  'success-dark': color.adjust($success, $lightness: -12%),
   'success': $success,
-  'success-light': #19ba51,
-  'success-subtle': #cfe9d9,
+  'success-light': color.adjust($success, $lightness: 24%),
+  'success-subtle': color.adjust($success, $lightness: 48%),
   'info': $info,
+  'info-subtle': color.adjust($info, $lightness: 36%),
   'warning': $warning,
-  'warning-subtle': #fff3cd,
+  'warning-subtle': color.adjust($warning, $lightness: 36%),
   'danger': $danger,
-  'danger-light': #dd776e,
-  'danger-subtle': #f6dad7,
+  'danger-light': color.adjust($danger, $lightness: 24%),
+  'danger-subtle': color.adjust($danger, $lightness: 36%),
   'light': $light,
   'dark': $dark,
   'black': #000,
-  'cat-b': #ff0,
-  'cat-w': #f8cbad,
-  'cat-e': #8eeeac,
-  'cat-s': #ffc000,
-  'cat-mi': #d9e1f2,
-  'cat-sa': #92d050,
   'flieder': #99c,
   'purple': #969,
-);
-
-// Special Vars
-$header-gradient: linear-gradient(
-  to right,
-  #ffd400,
-  #f9d500,
-  #c9c900,
-  #74b329,
-  #009e3b,
-  #009553,
-  #008c8e,
-  #347996,
-  #c2403a,
-  #e30010
 );
 
 // Fonts

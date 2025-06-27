@@ -41,6 +41,55 @@
 
 </section>
 
+<section class="p-5">
+    <h2>Theme Colors</h2>
+    <?php
+    // Bootstrap theme colors as defined in variables.production.scss
+    $themeColors = [
+        'primary-dark',
+        'primary',
+        'primary-light',
+        'primary-lighter',
+        'primary-subtle',
+        'secondary',
+        'secondary-lightish',
+        'secondary-light',
+        'secondary-lighter',
+        'success-dark',
+        'success',
+        'success-light',
+        'success-subtle',
+        'info',
+        'info-subtle',
+        'warning',
+        'warning-subtle',
+        'danger',
+        'danger-light',
+        'danger-subtle',
+        'light',
+        'dark',
+        'black',
+        'flieder',
+        'purple',
+    ];
+    ?>
+
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+        <?php foreach ($themeColors as $color): ?>
+            <div class="col">
+                <div class="card text-center border-0 shadow-sm">
+                    <div class="card-body p-2">
+                        <div class="rounded mb-2"
+                            style="height: 40px; background-color: var(--bs-<?= esc($color) ?>); border: 1px solid #ddd;">
+                        </div>
+                        <small class="text-capitalize"><?= esc($color) ?></small>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
 <section>
     <div class="p-5 bg-dark-subtle">
 

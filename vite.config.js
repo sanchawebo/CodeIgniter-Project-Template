@@ -1,6 +1,11 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import autoprefixer from 'autoprefixer';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const scssLogger = {
   warn(message, options) {
@@ -57,8 +62,9 @@ export default defineConfig(({ mode }) => ({
 
   server: {
     origin: 'http://localhost:3483',
-    port: '3480',
+    port: '3483',
     strictPort: true,
+    cors: true,
   },
 
   resolve: {
