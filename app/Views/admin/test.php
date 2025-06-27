@@ -17,7 +17,11 @@
 <hr>
 
 <pre>
-    <?= print_r($data, true) ?>
+    <?php if (ENVIRONMENT === 'production'): ?>
+        <?= print_r($data, true) ?>
+    <?php else: ?>
+        <?= d($data) ?>
+    <?php endif; ?>
 </pre>
 
 <?php $this->endSection() ?>

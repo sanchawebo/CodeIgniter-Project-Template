@@ -7,11 +7,10 @@ return [
             'list'     => 'Users',
             'activate' => 'Activate Users',
         ],
-        'feedback'   => 'Feedback',
         'error-logs' => 'Error Logs',
         'migrations' => 'Migrations',
-        'test'       => 'Test',
         'seeding'    => 'Seeding',
+        'test'       => 'Test',
         'back'       => 'Back to ' . SITE_NAME,
     ],
     'dashboard' => [

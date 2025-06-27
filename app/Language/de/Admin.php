@@ -7,13 +7,11 @@ return [
             'list'     => 'Nutzer',
             'activate' => 'Nutzer aktivieren',
         ],
-        'admin-feedback' => 'Feedback',
-        'error-logs'     => 'Fehlerprotokolle',
-        'migrations'     => 'Migrationen',
-        'seeding'        => 'Seeding',
-        'test'           => 'Test',
-
-        'back' => 'Zurück zu ' . SITE_NAME,
+        'error-logs' => 'Fehlerprotokolle',
+        'migrations' => 'Migrationen',
+        'seeding'    => 'Seeding',
+        'test'       => 'Test',
+        'back'       => 'Zurück zu ' . SITE_NAME,
     ],
     'dashboard' => [
         'title' => 'Admin-Dashboard',

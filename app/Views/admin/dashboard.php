@@ -16,14 +16,15 @@
 <?php if (auth()->user()->can('admin.settings')): ?>
     <div class="row pb-4">
         <div class="col">
-            <div class="card h-100 border-primary">
-                <div class="card-body">
-                    <h5 class="card-title"><?= lang('Settings.title') ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?= lang('Settings.title') ?></h6>
-                    <p class="card-text"><?= lang('Settings.desc') ?></p>
-                    <a href="<?= route_to('general-settings') ?>" target="_self" class="btn btn-primary"><?= lang('Settings.title') ?></a>
-                </div>
-            </div>
+            <?= view('admin/_dashboard_card', [
+                'title'      => lang('Settings.title'),
+                'subtitle'   => lang('Settings.title'),
+                'text'       => lang('Settings.desc'),
+                'route'      => route_to('general-settings'),
+                'button'     => lang('Settings.title'),
+                'borderClass'=> 'border-primary',
+                'btnClass'   => 'btn-primary',
+            ]) ?>
         </div>
     </div>
 <?php endif; ?>
@@ -32,26 +33,28 @@
     <div class="row pb-6">
     <?php if (auth()->user()->can('users.list')): ?>
         <div class="col">
-            <div class="card h-100 border-primary">
-                <div class="card-body">
-                    <h5 class="card-title"><?= lang('Admin.sidebar.users.list') ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?= lang('Admin.sidebar.users.group') ?></h6>
-                    <p class="card-text"><?= lang('Admin.users.desc') ?></p>
-                    <a href="<?= route_to('user-list') ?>" target="_self" class="btn btn-primary"><?= lang('Admin.sidebar.users.list') ?></a>
-                </div>
-            </div>
+            <?= view('admin/_dashboard_card', [
+                'title'      => lang('Admin.sidebar.users.list'),
+                'subtitle'   => lang('Admin.sidebar.users.group'),
+                'text'       => lang('Admin.users.desc'),
+                'route'      => route_to('user-list'),
+                'button'     => lang('Admin.sidebar.users.list'),
+                'borderClass'=> 'border-primary',
+                'btnClass'   => 'btn-primary',
+            ]) ?>
         </div>
     <?php endif; ?>
     <?php if (auth()->user()->can('users.activate')): ?>
         <div class="col">
-            <div class="card h-100 border-primary">
-                <div class="card-body">
-                    <h5 class="card-title"><?= lang('Admin.sidebar.users.activate') ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?= lang('Admin.sidebar.users.group') ?></h6>
-                    <p class="card-text"><?= lang('Admin.usersActivate.desc') ?></p>
-                    <a href="<?= route_to('UserController::activateShow') ?>" target="_self" class="btn btn-primary"><?= lang('Admin.sidebar.users.activate') ?></a>
-                </div>
-            </div>
+            <?= view('admin/_dashboard_card', [
+                'title'      => lang('Admin.sidebar.users.activate'),
+                'subtitle'   => lang('Admin.sidebar.users.group'),
+                'text'       => lang('Admin.usersActivate.desc'),
+                'route'      => route_to('UserController::activateShow'),
+                'button'     => lang('Admin.sidebar.users.activate'),
+                'borderClass'=> 'border-primary',
+                'btnClass'   => 'btn-primary',
+            ]) ?>
         </div>
     <?php endif; ?>
     </div>
@@ -61,36 +64,39 @@
     <div class="row pb-6">
     <?php if (auth()->user()->can('admin.errors')): ?>
         <div class="col">
-            <div class="card h-100 border-purple">
-                <div class="card-body">
-                    <h5 class="card-title"><?= lang('Admin.sidebar.error-logs') ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?= lang('Admin.adminTools') ?></h6>
-                    <p class="card-text"><?= lang('Admin.error-logs.desc') ?></p>
-                    <a href="<?= route_to('error-logs') ?>" target="_self" class="btn btn-secondary"><?= lang('Admin.sidebar.error-logs') ?></a>
-                </div>
-            </div>
+            <?= view('admin/_dashboard_card', [
+                'title'      => lang('Admin.sidebar.error-logs'),
+                'subtitle'   => lang('Admin.adminTools'),
+                'text'       => lang('Admin.error-logs.desc'),
+                'route'      => route_to('error-logs'),
+                'button'     => lang('Admin.sidebar.error-logs'),
+                'borderClass'=> 'border-purple',
+                'btnClass'   => 'btn-secondary',
+            ]) ?>
         </div>
     <?php endif; ?>
     <?php if (auth()->user()->can('admin.db')): ?>
         <div class="col">
-            <div class="card h-100 border-purple">
-                <div class="card-body">
-                    <h5 class="card-title"><?= lang('Admin.sidebar.migrations') ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?= lang('Admin.adminTools') ?></h6>
-                    <p class="card-text"><?= lang('Admin.migrations.desc') ?></p>
-                    <a href="<?= route_to('migration') ?>" target="_self" class="btn btn-secondary"><?= lang('Admin.sidebar.migrations') ?></a>
-                </div>
-            </div>
+            <?= view('admin/_dashboard_card', [
+                'title'      => lang('Admin.sidebar.migrations'),
+                'subtitle'   => lang('Admin.adminTools'),
+                'text'       => lang('Admin.migrations.desc'),
+                'route'      => route_to('migration'),
+                'button'     => lang('Admin.sidebar.migrations'),
+                'borderClass'=> 'border-purple',
+                'btnClass'   => 'btn-secondary',
+            ]) ?>
         </div>
         <div class="col">
-            <div class="card h-100 border-purple">
-                <div class="card-body">
-                    <h5 class="card-title"><?= lang('Admin.sidebar.seeding') ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?= lang('Admin.adminTools') ?></h6>
-                    <p class="card-text"><?= lang('Admin.seeding.desc') ?></p>
-                    <a href="<?= route_to('seeding') ?>" target="_self" class="btn btn-secondary"><?= lang('Admin.sidebar.seeding') ?></a>
-                </div>
-            </div>
+            <?= view('admin/_dashboard_card', [
+                'title'      => lang('Admin.sidebar.seeding'),
+                'subtitle'   => lang('Admin.adminTools'),
+                'text'       => lang('Admin.seeding.desc'),
+                'route'      => route_to('seeding'),
+                'button'     => lang('Admin.sidebar.seeding'),
+                'borderClass'=> 'border-purple',
+                'btnClass'   => 'btn-secondary',
+            ]) ?>
         </div>
     <?php endif; ?>
     </div>
