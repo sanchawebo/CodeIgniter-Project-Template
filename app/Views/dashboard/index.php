@@ -15,10 +15,10 @@
 <?= lang('Dashboard.pageTitle') ?>
 <?php $this->endSection() ?>
 
-<?php $this->extend('templates/layout'); ?>
+<?php $this->extend('templates/layout-page'); ?>
 <?php $this->section('main'); ?>
 
-<div class="container" hx-boost="true" hx-push-url="true">
+<div hx-boost="true" hx-push-url="true">
     <div class="mb-6">
         <div class="row row-cols-1 row-cols-md-2 g-5">
             <div>
