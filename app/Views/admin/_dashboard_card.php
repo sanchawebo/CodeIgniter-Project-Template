@@ -7,11 +7,13 @@
  * @var string $button
  * @var string|null $borderClass
  * @var string|null $btnClass
+ * @var string|null $hoverClass
  */
 $borderClass = $borderClass ?? 'border-primary';
 $btnClass = $btnClass ?? 'btn-primary';
+$hoverClass = $hoverClass ?? 'hover-secondary';
 ?>
-<div class="card h-100 <?= esc($borderClass) ?>">
+<div class="card h-100 <?= esc($borderClass) ?> <?= esc($hoverClass) ?>">
     <div class="card-body vstack">
         <?php if (!empty($subtitle)): ?>
             <h6 class="card-subtitle mb-2 text-muted"><?= esc($subtitle) ?></h6>

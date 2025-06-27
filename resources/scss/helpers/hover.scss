@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'sass:color';
+
+@each $name, $color in $theme-colors {
+  .hover-#{$name} {
+    overflow: hidden; // ensures children don't overflow rounded corners
+
+    &:hover,
+    &:focus {
+      background-color: color.scale($color, $lightness: 80%);
+    }
+  }
+
+  $color-mode-type: data;
+
+  @include color-mode(dark) {
+    .hover-#{$name} {
+      &:hover,
+      &:focus {
+        background-color: rgba($color, 25%);
+      }
+    }
+  }
+}

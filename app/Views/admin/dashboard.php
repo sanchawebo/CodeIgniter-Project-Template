@@ -24,6 +24,7 @@
                 'button'     => lang('Settings.title'),
                 'borderClass'=> 'border-primary',
                 'btnClass'   => 'btn-primary',
+                'hoverClass' => 'hover-primary',
             ]) ?>
         </div>
     </div>
@@ -41,6 +42,7 @@
                 'button'     => lang('Admin.sidebar.users.list'),
                 'borderClass'=> 'border-primary',
                 'btnClass'   => 'btn-primary',
+                'hoverClass' => 'hover-primary',
             ]) ?>
         </div>
     <?php endif; ?>
@@ -54,6 +56,7 @@
                 'button'     => lang('Admin.sidebar.users.activate'),
                 'borderClass'=> 'border-primary',
                 'btnClass'   => 'btn-primary',
+                'hoverClass' => 'hover-primary',
             ]) ?>
         </div>
     <?php endif; ?>
@@ -72,6 +75,7 @@
                 'button'     => lang('Admin.sidebar.error-logs'),
                 'borderClass'=> 'border-purple',
                 'btnClass'   => 'btn-secondary',
+                'hoverClass' => 'hover-purple',
             ]) ?>
         </div>
     <?php endif; ?>
@@ -85,6 +89,7 @@
                 'button'     => lang('Admin.sidebar.migrations'),
                 'borderClass'=> 'border-purple',
                 'btnClass'   => 'btn-secondary',
+                'hoverClass' => 'hover-purple',
             ]) ?>
         </div>
         <div class="col">
@@ -96,6 +101,7 @@
                 'button'     => lang('Admin.sidebar.seeding'),
                 'borderClass'=> 'border-purple',
                 'btnClass'   => 'btn-secondary',
+                'hoverClass' => 'hover-purple',
             ]) ?>
         </div>
     <?php endif; ?>
