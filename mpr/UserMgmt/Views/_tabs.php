@@ -7,44 +7,36 @@ use UserMgmt\Entities\User;
  * @var User|null $user
  */
 ?>
-<div class="a-tab-navigation__wrapper">
-  <div class="a-tab-navigation__gradients"></div>
-  <ol class="a-tab-navigation" role="tablist">
-    <li class="a-tab-navigation__item" role="none">
-      <a class="a-tab-navigation__tab <?= ($tab === 'details') ? '-selected' : '' ?>"
-        href="<?= isset($user) ? $user->adminLink() : '#' ?>"
-        tabindex="0" role="tab">
-        <span class="a-tab-navigation__tab-content">
-          <span
-            class="a-tab-navigation__label"><?= lang('Users.details') ?></span>
-        </span>
-      </a>
-    </li>
-    <?php if (isset($user) && $user !== null) : // @phpstan-ignore notIdentical.alwaysTrue?>
-    <?php if (auth()->user()->can('users.edit')) : ?>
-    <li class="a-tab-navigation__item" role="none">
-      <a class="a-tab-navigation__tab <?= ($tab === 'permissions') ? '-selected' : '' ?>"
-        href="<?= $user->adminLink('permissions') ?>"
-        tabindex="0" role="tab">
-        <span class="a-tab-navigation__tab-content">
-          <span
-            class="a-tab-navigation__label"><?= lang('Users.permissions.permissions') ?></span>
-        </span>
-      </a>
-    </li>
-    <?php endif ?>
-    <li class="a-tab-navigation__item" role="none">
-      <a class="a-tab-navigation__tab <?= ($tab === 'security') ? '-selected' : '' ?>"
-        href="<?= $user->adminLink('security') ?>"
-        tabindex="0" role="tab">
-        <span class="a-tab-navigation__tab-content">
-          <span
-            class="a-tab-navigation__label"><?= lang('Users.security.head') ?></span>
-        </span>
-      </a>
-    </li>
-    <?php endif ?>
-    <?php // @phpstan-ignore-next-line?>
-    <?= service('resourceTabs')->renderTabsFor('user') ?>
-  </ol>
+<div class="container mt-3">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link <?= ($tab === 'details') ? 'active' : '' ?>"
+                href="<?= isset($user) ? $user->adminLink() : '#' ?>"
+                role="tab">
+                <i class="fa fa-user"></i>
+                <?= lang('Users.details') ?>
+            </a>
+        </li>
+        <?php if (isset($user) && $user !== null) : ?>
+            <?php if (auth()->user()->can('users.edit')) : ?>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link <?= ($tab === 'permissions') ? 'active' : '' ?>"
+                        href="<?= $user->adminLink('permissions') ?>"
+                        role="tab">
+                        <i class="fa fa-key"></i>
+                        <?= lang('Users.permissions.permissions') ?>
+                    </a>
+                </li>
+            <?php endif ?>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link <?= ($tab === 'security') ? 'active' : '' ?>"
+                    href="<?= $user->adminLink('security') ?>"
+                    role="tab">
+                    <i class="fa fa-shield-alt"></i>
+                    <?= lang('Users.security.head') ?>
+                </a>
+            </li>
+        <?php endif ?>
+        <?= service('resourceTabs')->renderTabsFor('user') ?>
+    </ul>
 </div>

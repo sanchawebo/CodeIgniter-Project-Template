@@ -1,9 +1,9 @@
 <?php
 
-namespace UserMgmt\Config;
+namespace Mpr\UserMgmt\Config;
 
 use CodeIgniter\Config\BaseService;
-use UserMgmt\Resources\ResourceTabs;
+use Mpr\UserMgmt\Resources\ResourceTabs;
 
 /**
  * Services Configuration file.

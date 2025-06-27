@@ -1,6 +1,6 @@
 <?php
 
-namespace UserMgmt\Config;
+namespace Mpr\UserMgmt\Config;
 
 class Registrar
 {
@@ -42,7 +42,7 @@ class Registrar
     {
         return [
             'templates' => [
-                'frok_full' => 'UserMgmt\Views\pager\custom_full',
+                'frok_full' => 'Mpr\UserMgmt\Views\pager\custom_full',
             ],
         ];
     }

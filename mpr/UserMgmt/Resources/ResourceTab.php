@@ -9,7 +9,7 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace UserMgmt\Resources;
+namespace Mpr\UserMgmt\Resources;
 
 /**
  * Represents a single tab that should be displayed for a resource.

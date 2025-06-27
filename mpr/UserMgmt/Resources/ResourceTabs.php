@@ -9,7 +9,7 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace UserMgmt\Resources;
+namespace Mpr\UserMgmt\Resources;
 
 /**
  * Provides ways to manage the tabs that display for a

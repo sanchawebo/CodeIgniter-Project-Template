@@ -1,14 +1,14 @@
 <?php
 
-namespace UserMgmt;
+namespace Mpr\UserMgmt;
 
 use CodeIgniter\Router\RouteCollection;
-use UserMgmt\Controllers\UserController;
+use Mpr\UserMgmt\Controllers\UserController;
 
 /**
  * @var RouteCollection $routes
  */
-$routes->group(ADMIN_AREA . '/users', ['namespace' => 'UserMgmt\Controllers', 'filter' => 'permission:users.list'], static function ($routes) {
+$routes->group(ADMIN_AREA . '/users', ['namespace' => 'Mpr\UserMgmt\Controllers', 'filter' => 'permission:users.list'], static function ($routes) {
     // Manage Users
     $routes->get('new', [UserController::class, 'create'], ['as' => 'user-new']);
     $routes->get('(:num)', [UserController::class, 'edit'], ['as' => 'user-edit']);

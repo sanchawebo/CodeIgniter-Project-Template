@@ -1,9 +1,9 @@
 <?php
 
-namespace UserMgmt\Models;
+namespace Mpr\UserMgmt\Models;
 
 use App\Models\UserModel as AppUserModel;
-use UserMgmt\Entities\User;
+use Mpr\UserMgmt\Entities\User;
 
 class UserModel extends AppUserModel
 {

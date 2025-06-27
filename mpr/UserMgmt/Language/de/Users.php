@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'siteTitle'          => 'Bosch PDF Generator',
     'users'              => 'Benutzer',
+    'actions'            => 'Aktionen',
     'delete'             => 'Löschen',
     'deleteSelected'     => 'Ausgewählte löschen',
     'deleteConfirm'      => 'Diesen Benutzer löschen?',

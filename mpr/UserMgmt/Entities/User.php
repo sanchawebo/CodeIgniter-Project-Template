@@ -1,6 +1,6 @@
 <?php
 
-namespace UserMgmt\Entities;
+namespace Mpr\UserMgmt\Entities;
 
 use CodeIgniter\Shield\Entities\User as ShieldUser;
 

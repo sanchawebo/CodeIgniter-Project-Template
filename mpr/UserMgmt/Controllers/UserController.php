@@ -1,21 +1,21 @@
 <?php
 
-namespace UserMgmt\Controllers;
+namespace Mpr\UserMgmt\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\CountryModel;
 use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\Shield\Models\LoginModel;
 use CodeIgniter\Shield\Models\UserIdentityModel;
+use Mpr\UserMgmt\Entities\User;
+use Mpr\UserMgmt\Models\UserModel;
 use ReflectionException;
-use UserMgmt\Entities\User;
-use UserMgmt\Models\UserModel;
 
 class UserController extends BaseController
 {
     public const PER_PAGE = 15;
 
-    protected $viewPrefix = 'UserMgmt\Views\\';
+    protected $viewPrefix = 'Mpr\UserMgmt\Views\\';
     protected $userModel;
 
     public function __construct()
