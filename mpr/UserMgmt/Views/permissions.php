@@ -29,12 +29,12 @@ use UserMgmt\Entities\User;
 <form action="<?= current_url() ?>" method="post">
     <?= csrf_field() ?>
 
-    <fieldset class="border-0 mt-5">
+    <fieldset class="border-0 p-3 rounded mb-4 bg-light-subtle">
         <legend class="h5 mb-3">
             <?= lang('Users.permissions.head') ?>
         </legend>
 
-        <div class="alert alert-secondary d-flex align-items-start" role="alert">
+        <div class="alert alert-info d-flex align-items-start" role="alert">
             <i class="fa fa-info-circle me-2 mt-1"></i>
             <div>
                 <p class="mb-1"><?= lang('Users.permissions.info') ?></p>
@@ -43,7 +43,7 @@ use UserMgmt\Entities\User;
                         <input
                             type="checkbox"
                             id="checkbox-example"
-                            class="form-check-input"
+                            class="form-check-input in-group"
                             disabled>
                         <label class="form-check-label" for="checkbox-example">&nbsp;</label>
                     </div>
@@ -52,8 +52,8 @@ use UserMgmt\Entities\User;
             </div>
         </div>
 
-        <table class="table table-bordered align-middle">
-            <thead class="table-light">
+        <table class="table table-striped align-middle">
+            <thead>
                 <tr>
                     <th style="width: 3rem"></th>
                     <th>

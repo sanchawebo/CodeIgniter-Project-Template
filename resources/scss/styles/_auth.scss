@@ -1,3 +1,90 @@
+@use 'sass:map';
+
+/*
+ * --------------------------------------------------------------------------
+ * PASSWORDS
+ * --------------------------------------------------------------------------
+ */
+div#pass-meter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0.5rem;
+
+  & .segment {
+    display: block;
+    background: map.get($theme-colors, 'light');
+    border-radius: 0.25rem;
+    border: 1px solid map.get($theme-colors, 'secondary-light');
+    height: 12px;
+    flex: 1;
+
+    &:not(:last-child) {
+      margin-right: 2px;
+    }
+  }
+
+  &.good .segment {
+    background-color: map.get($theme-colors, 'success');
+    border-color: map.get($theme-colors, 'success');
+  }
+
+  &.warn .segment {
+    background-color: map.get($theme-colors, 'warning');
+    border-color: map.get($theme-colors, 'warning');
+  }
+
+  &.bad .segment {
+    background-color: map.get($theme-colors, 'danger');
+    border-color: map.get($theme-colors, 'danger');
+  }
+
+  &.str-0 .segment {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      background-color: map.get($theme-colors, 'light');
+      border-color: map.get($theme-colors, 'secondary-light');
+    }
+  }
+
+  &.str-1 .segment {
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      background-color: map.get($theme-colors, 'light');
+      border-color: map.get($theme-colors, 'secondary-light');
+    }
+  }
+
+  &.str-2 .segment {
+    &:nth-child(3),
+    &:nth-child(4) {
+      background-color: map.get($theme-colors, 'light');
+      border-color: map.get($theme-colors, 'secondary-light');
+    }
+  }
+
+  &.str-3 .segment {
+    &:nth-child(4) {
+      background-color: map.get($theme-colors, 'light');
+      border-color: map.get($theme-colors, 'secondary-light');
+    }
+  }
+}
+
+.pass-match,
+.pass-not-match {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: map.get($theme-colors, 'success');
+}
+
+.pass-not-match {
+  color: map.get($theme-colors, 'danger');
+}
+
 #pw-message,
 #pw-confirm-message {
   display: block;

@@ -47,7 +47,7 @@ class UserModel extends AppUserModel
             ->join(
                 setting('Auth.tables')['groups_users'],
                 sprintf('%1$s.user_id = %2$s.id', setting('Auth.tables')['groups_users'], setting('Auth.tables')['users']),
-                'inner',
+                'left',
             )
             ->whereIn(setting('Auth.tables')['groups_users'] . '.group', $groups)
             ->when($hideHiddenUsers, static function ($query, $hideHiddenUsers) use ($tableName) {
@@ -57,7 +57,8 @@ class UserModel extends AppUserModel
                     ->orWhere($tableName . '.status IS NULL')
                     ->groupEnd();
             })
-            ->orderBy('FIELD(' . setting('Auth.tables')['groups_users'] . '.group, "' . implode('", "', array_keys(setting('AuthGroups.groups'))) . '")', 'ASC', false)
+            ->groupBy($tableName . '.id')
+            ->orderBy('MIN(FIELD(' . setting('Auth.tables')['groups_users'] . '.group, "' . implode('", "', array_keys(setting('AuthGroups.groups'))) . '"))', 'ASC', false)
             ->orderBy($tableName . '.first_name')
             ->orderBy($tableName . '.last_name');
 

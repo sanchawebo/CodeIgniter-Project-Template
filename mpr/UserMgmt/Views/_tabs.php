@@ -7,8 +7,8 @@ use UserMgmt\Entities\User;
  * @var User|null $user
  */
 ?>
-<div class="container mt-3">
-    <ul class="nav nav-tabs" role="tablist">
+<div class="my-3">
+    <ul class="nav nav-tabs nav-fill" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link <?= ($tab === 'details') ? 'active' : '' ?>"
                 href="<?= isset($user) ? $user->adminLink() : '#' ?>"

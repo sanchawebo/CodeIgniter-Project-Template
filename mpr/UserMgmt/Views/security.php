@@ -28,14 +28,14 @@ require ROOTPATH . 'Mpr/UserMgmt/functions.php';
 
 <?= view('Mpr\UserMgmt\Views\_tabs', ['tab' => 'security', 'user' => $user]) ?>
 
-<fieldset class="border-0 mt-5">
+<fieldset class="border-0 p-3 rounded mb-4 bg-light-subtle">
     <legend class="h5">
         <?= lang('Users.security.changePassword') ?>
     </legend>
     <?= view('Mpr\UserMgmt\Views\password_change', ['user' => $user]) ?>
 </fieldset>
 
-<fieldset class="border-0 mt-5">
+<fieldset class="border-0 p-3 rounded mb-4 bg-light-subtle">
     <legend class="h5">
         <?= lang('Users.security.recentLogins') ?>
     </legend>
@@ -91,32 +91,8 @@ require ROOTPATH . 'Mpr/UserMgmt/functions.php';
 
 <?php $this->section('pageScripts') ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-<script defer>
-    function checkStrength() {
-        let input = document.getElementById('password');
-        let meter = document.getElementById('pass-meter');
-        let info = zxcvbn(input.value);
-        let score;
-
-        switch (info.score) {
-            case 1:
-                score = 25;
-                break;
-            case 2:
-                score = 50;
-                break;
-            case 3:
-                score = 75;
-                break;
-            case 4:
-                score = 100;
-                break;
-            default:
-                score = 0;
-                break;
-        }
-        meter.value = score;
-        meter.ariaValueNow = score;
-    }
-</script>
+<?= script_tag([
+    'src'   => '/assets/js/password.strength.js',
+    'defer' => null,
+]) ?>
 <?php $this->endSection() ?>

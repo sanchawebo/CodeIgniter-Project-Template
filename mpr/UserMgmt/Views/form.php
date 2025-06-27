@@ -24,7 +24,7 @@ helper('form');
 <div class="d-flex justify-content-between mb-3">
     <div>
         <a href="<?= url_to('user-list') ?>" class="btn btn-link">
-            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-long-arrow-left"></i>
             <span><?= lang('Users.backList') ?></span>
         </a>
     </div>
@@ -51,7 +51,7 @@ helper('form');
             <input type="hidden" name="id" value="<?= $user->id ?>">
         <?php endif ?>
 
-        <fieldset class="border-0 mb-4">
+        <fieldset class="border-0 p-3 rounded mb-4 bg-light-subtle">
             <legend class="h5 mb-3"><?= lang('Users.info') ?></legend>
             <div class="row">
                 <div class="col">
@@ -111,7 +111,7 @@ helper('form');
             </div>
         </fieldset>
 
-        <fieldset class="border-0 mb-4">
+        <fieldset class="border-0 p-3 rounded mb-4 bg-light-subtle">
             <legend class="h5 mb-3"><?= lang('Users.groups') ?></legend>
             <?php if (auth()->user()->can('users.edit')) : ?>
                 <p class="mt-0"><?= lang('Users.groupsInfo') ?></p>
