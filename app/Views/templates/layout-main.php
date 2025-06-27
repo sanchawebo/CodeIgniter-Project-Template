@@ -14,7 +14,9 @@
     <?php helper(['html', 'vite']); ?>
     <?= viteTags('css'); ?>
     <?= viteTags('js'); ?>
-    <title><?= $this->renderSection('title') ?></title>
+    <?php $this->section('title') ?>
+        <title><?= $this->renderSection('title', true) ?> | <?= SITE_NAME ?></title>
+    <?php $this->endSection() ?>
     <script src="/assets/js/_hyperscript.min.js"></script>
     <script src="/assets/js/theme-switcher.js"></script>
     <?= $this->renderSection('pageStyles') ?>

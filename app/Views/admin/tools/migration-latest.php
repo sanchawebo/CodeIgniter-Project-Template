@@ -4,9 +4,7 @@
  * @var bool                  $success
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.migrations.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.migrations.title') ?>
 <?php $this->endSection() ?>

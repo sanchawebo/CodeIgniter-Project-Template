@@ -8,12 +8,12 @@
 <?php $this->extend(config('Auth')->views['layout']) ?>
 
 <?php $this->section('title') ?>
-<?= lang('Auth.login.pageTitle') ?>
+<?= lang('Auth.login.title') ?>
 <?php $this->endSection() ?>
 
 <?php $this->section('main') ?>
 
-<div class="box-w-sm mx-auto max-vh-100 p-5 overflow-y-auto border border-secondary text-bg-light rounded">
+<div class="box-w-sm mx-auto max-vh-100 p-5 overflow-y-auto border border-secondary bg-light-subtle rounded">
   <h1 class="text-center"><?=lang('Auth.login.title')?></h1>
   <div class="mt-6 mb-0">
     <?= session_alert('error') ?>

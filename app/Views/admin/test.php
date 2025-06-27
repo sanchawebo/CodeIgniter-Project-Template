@@ -4,9 +4,7 @@
  * @var array $data
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.test.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.test.title') ?>
 <?php $this->endSection() ?>

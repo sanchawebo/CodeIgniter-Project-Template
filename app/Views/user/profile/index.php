@@ -4,9 +4,7 @@
  * @var CodeIgniter\View\View $this
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Profile.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Profile.title') ?>
 <?php $this->endSection() ?>

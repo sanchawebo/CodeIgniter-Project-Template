@@ -4,9 +4,7 @@
  * @var CodeIgniter\View\View $this
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.dashboard.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.dashboard.title') ?>
 <?php $this->endSection() ?>

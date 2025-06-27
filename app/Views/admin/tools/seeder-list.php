@@ -5,9 +5,7 @@
  * @var array                 $files
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.seeding.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.seeding.title') ?>
 <?php $this->endSection() ?>

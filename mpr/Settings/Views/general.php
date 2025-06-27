@@ -7,7 +7,7 @@ use CodeIgniter\View\View;
  */
 ?>
 <?php $this->section('title') ?>
-<?= lang('Settings.pageTitle') ?>
+<?= lang('Settings.title') ?>
 <?php $this->endSection() ?>
 <!-- Change the html-title in the above section. -->
 

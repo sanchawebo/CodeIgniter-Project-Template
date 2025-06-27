@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use Config\Services;
 use Exception;
 
 class MigrationController extends BaseController
@@ -11,7 +12,7 @@ class MigrationController extends BaseController
     {
         $data               = [];
         $data['title']      = 'Migrations';
-        $migrate            = \Config\Services::migrations();
+        $migrate            = Services::migrations();
         $data['migrations'] = json_decode(json_encode($migrate->findMigrations()), true);
 
         krsort($data['migrations']);
@@ -29,12 +30,10 @@ class MigrationController extends BaseController
             $buttonHtml = form_open('/admin/migration/single');
             $buttonHtml .= form_hidden('namespace', $data['migrations'][$key]['namespace']);
             $buttonHtml .= form_hidden('path', $data['migrations'][$key]['path']);
-            $buttonHtml .= '<button type="submit" class="a-button a-button--';
+            $buttonHtml .= '<button type="submit" class="btn btn-';
             $buttonHtml .= ($method === 'up') ? 'primary' : 'secondary';
             $buttonHtml .= ' -fixed -without-icon">';
-            $buttonHtml .= '<span class="a-button__label">';
             $buttonHtml .= ($method === 'up') ? 'Migrate' : 'Rollback';
-            $buttonHtml .= '</span>';
             $buttonHtml .= '</button>';
             $buttonHtml .= form_close();
 
@@ -54,7 +53,7 @@ class MigrationController extends BaseController
     public function migrateAll()
     {
         try {
-            $migrate = \Config\Services::migrations();
+            $migrate = Services::migrations();
             $migrate->latest();
             $data['success'] = true;
         } catch (Exception $exc) {
@@ -72,7 +71,7 @@ class MigrationController extends BaseController
         $path      = $data['path'];
 
         try {
-            $migrate = \Config\Services::migrations();
+            $migrate = Services::migrations();
 
             $migrate->force($path, $namespace);
             $data['success'] = true;

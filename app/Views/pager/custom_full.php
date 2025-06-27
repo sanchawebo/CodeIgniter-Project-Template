@@ -8,17 +8,17 @@ use CodeIgniter\Pager\PagerRenderer;
 $pager->setSurroundCount(5);
 ?>
 
-<nav aria-label="<?= lang('ScpPager.pageNavigation') ?>">
+<nav aria-label="<?= lang('Pager.pageNavigation') ?>">
 	<ul class="pagination justify-content-center">
 		<?php if ($pager->hasPreviousPage()) : ?>
 			<li class="page-item">
-				<a class="page-link" href="<?= $pager->getPreviousPage() ?>" aria-label="<?= lang('ScpPager.previous') ?>">
+				<a class="page-link" href="<?= $pager->getPreviousPage() ?>" aria-label="<?= lang('Pager.previous') ?>">
 					<span aria-hidden="true">&laquo;</span>
 				</a>
 			</li>
 		<?php else: ?>
 			<li class="page-item disabled">
-				<span class="page-link" aria-label="<?= lang('ScpPager.previous') ?>">
+				<span class="page-link" aria-label="<?= lang('Pager.previous') ?>">
 					<span aria-hidden="true">&laquo;</span>
 				</span>
 			</li>
@@ -34,13 +34,13 @@ $pager->setSurroundCount(5);
 
 		<?php if ($pager->hasNextPage()) : ?>
 			<li class="page-item">
-				<a class="page-link" href="<?= $pager->getNextPage() ?>" aria-label="<?= lang('ScpPager.next') ?>">
+				<a class="page-link" href="<?= $pager->getNextPage() ?>" aria-label="<?= lang('Pager.next') ?>">
 					<span aria-hidden="true">&raquo;</span>
 				</a>
 			</li>
 		<?php else: ?>
 			<li class="page-item disabled">
-				<span class="page-link" aria-label="<?= lang('ScpPager.next') ?>">
+				<span class="page-link" aria-label="<?= lang('Pager.next') ?>">
 					<span aria-hidden="true">&raquo;</span>
 				</span>
 			</li>

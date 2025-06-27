@@ -4,9 +4,7 @@
  * @var CodeIgniter\View\View $this
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Auth.resetPassword.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Auth.resetPassword.title') ?>
 <?php $this->endSection() ?>

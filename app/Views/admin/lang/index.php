@@ -4,9 +4,7 @@
  * @var array $langMap
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.language.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.language.title') ?>
 <?php $this->endSection() ?>

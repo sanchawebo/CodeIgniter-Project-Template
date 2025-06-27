@@ -8,27 +8,25 @@
  */
 
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Dashboard.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
-<?= lang('Dashboard.pageTitle') ?>
+<?= lang('Dashboard.title') ?>
 <?php $this->endSection() ?>
 
 <?php $this->extend('templates/layout-page'); ?>
 <?php $this->section('main'); ?>
 
 <div hx-boost="true" hx-push-url="true">
-    <div class="mb-6">
+    <div class="mb-3">
         <div class="row row-cols-1 row-cols-md-2 g-5">
             <div>
-                <div class="a-text -primary p-5">
+                <div class="bg-primary-subtle p-5">
                     <h1><?= lang('Dashboard.welcomeHead', [auth()->user()->first_name ?? 'Person', auth()->user()->last_name ?? 'Doe']) ?></h1>
                 </div>
             </div>
         </div>
     </div>
-    <div class="p-5 mb-6">
+    <div class="mb-3">
         <?= $this->include('welcome_message') ?>
     </div>
 </div>

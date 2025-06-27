@@ -6,9 +6,7 @@
  */
 ?>
 
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.usersActivate.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.usersActivate.title') ?>
 <?php $this->endSection() ?>

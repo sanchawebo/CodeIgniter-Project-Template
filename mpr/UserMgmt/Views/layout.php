@@ -9,7 +9,7 @@ use CodeIgniter\View\View;
 
 <?php $this->extend('templates/layout-admin'); ?>
 
-<?php $this->section('pageTitle') ?>
+<?php $this->section('title') ?>
 <?php $this->renderSection('title', true) ?>
 <?php $this->endSection() ?>
 

@@ -94,7 +94,7 @@ abstract class BaseController extends Controller
         if ($this->request->is('htmx')) {
             if ($fragmentName === 'body') {
                 // Return the <title>-fragment to change the page title.
-                $fragmentName = ['pageTitle', 'body'];
+                $fragmentName = ['title', 'body'];
             }
 
             return view_fragment($viewName, $fragmentName, $data);

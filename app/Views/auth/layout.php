@@ -16,7 +16,7 @@
   <?= viteTags('js'); ?>
   <script src="/assets/js/_hyperscript.min.js"></script>
   <script src="/assets/js/theme-switcher.js"></script>
-  <title><?= $this->renderSection('title') ?></title>
+  <title><?= $this->renderSection('title') ?> | <?= SITE_NAME ?></title>
 </head>
 
 <body class="d-flex vh-100 align-items-center bg-primary bg-gradient">

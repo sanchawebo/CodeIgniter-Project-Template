@@ -2,7 +2,6 @@
 
 return [
     'login' => [
-        'pageTitle'      => 'Anmelden | ' . SITE_NAME,
         'title'          => SITE_NAME,
         'email'          => 'E-Mail-Adresse',
         'password'       => 'Passwort',
@@ -13,15 +12,13 @@ return [
         'register'       => 'Registrierung',
     ],
     'magicLink' => [
-        'pageTitle' => 'Passworthilfe | ' . SITE_NAME,
-        'title'     => 'Passworthilfe',
-        'text'      => 'Wenn Sie Ihr Passwort vergessen haben, geben Sie bitte Ihre Anmelde-E-Mail-Adresse in das Textfeld unten ein. Ein Link, mit dem Sie sich anmelden können, um Ihr Passwort zurückzusetzen, wird dann an diese Adresse gesendet.',
-        'email'     => 'E-Mail-Adresse',
-        'sendBtn'   => 'Senden',
-        'back'      => 'Zurück zur Anmeldung',
+        'title'   => 'Passworthilfe',
+        'text'    => 'Wenn Sie Ihr Passwort vergessen haben, geben Sie bitte Ihre Anmelde-E-Mail-Adresse in das Textfeld unten ein. Ein Link, mit dem Sie sich anmelden können, um Ihr Passwort zurückzusetzen, wird dann an diese Adresse gesendet.',
+        'email'   => 'E-Mail-Adresse',
+        'sendBtn' => 'Senden',
+        'back'    => 'Zurück zur Anmeldung',
     ],
     'register' => [
-        'pageTitle'        => 'Registrieren | ' . SITE_NAME,
         'title'            => 'Registrieren Sie Ihr Konto',
         'text'             => 'Bitte füllen Sie die Pflichtfelder unten aus. Mit einem Klick auf die Schaltfläche \'Registrieren\' stimmen Sie der Verarbeitung Ihrer persönlichen Daten zu. Bitte beachten Sie: Benutzer, die sich seit mehr als 12 Monaten nicht angemeldet haben, werden gelöscht und müssen sich erneut registrieren.',
         'email'            => 'Ihre E-Mail-Adresse',
@@ -49,7 +46,6 @@ return [
         'back'            => 'Zurück zur Anmeldung',
     ],
     'emailActivate' => [
-        'pageTitle'    => 'Kontoaktivierung | ' . SITE_NAME,
         'title'        => 'Kontoaktivierung',
         'body'         => 'Ein Administrator muss Ihr Konto autorisieren, bevor Sie diese Website nutzen können. Sie werden über diese E-Mail-Adresse benachrichtigt:',
         'emailSubject' => SITE_NAME . ': Anforderung zur Kontoaktivierung',
@@ -62,7 +58,6 @@ return [
         'emailLink'    => 'Link:',
     ],
     'resetPassword' => [
-        'pageTitle'    => 'Passwort zurücksetzen | ' . SITE_NAME,
         'title'        => 'Passwort zurücksetzen',
         'notification' => 'Legen Sie hier ein neues Passwort für Ihren Zugang fest.',
     ],

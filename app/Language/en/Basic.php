@@ -3,7 +3,6 @@
 // cSpell: ignore segcat
 return [
     'siteTitle'     => SITE_NAME,
-    'pageTitle'     => 'Website | ' . SITE_NAME,
     'title'         => 'Website',
     'themeSwitcher' => 'Toggle Dark/Light Mode',
     'langSwitcher'  => [

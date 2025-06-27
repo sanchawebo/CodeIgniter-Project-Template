@@ -7,9 +7,7 @@
  * @var string                $pagerLinks
  */
 ?>
-<?php $this->section('pageTitle') ?>
-<?= lang('Admin.error-logs.pageTitle') ?>
-<?php $this->endSection() ?>
+
 <?php $this->section('title') ?>
 <?= lang('Admin.error-logs.title') ?>
 <?php $this->endSection() ?>

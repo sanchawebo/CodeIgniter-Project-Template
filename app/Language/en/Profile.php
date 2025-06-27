@@ -1,9 +1,8 @@
 <?php
 
 return [
-    'pageTitle' => 'Profile | ' . SITE_NAME,
-    'title'     => 'Profile',
-    'tabs'      => [
+    'title' => 'Profile',
+    'tabs'  => [
         'settings' => 'Settings',
         'address'  => 'Addresses',
         'logo'     => 'Logos',
