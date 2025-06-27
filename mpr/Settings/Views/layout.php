@@ -1,23 +1,26 @@
 <?php
+
+use CodeIgniter\View\View;
+
 /**
- * @var CodeIgniter\View\View $this
+ * @var View $this
  */
 ?>
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 
 <?php $this->section('pageTitle') ?>
-<?php $this->renderSection('title', true) ?>
+<?= $this->renderSection('title', true) ?>
 <?php $this->endSection() ?>
 
 <?php $this->section('title') ?>
-<?php $this->renderSection('title') ?>
+<?= $this->renderSection('title') ?>
 <?php $this->endSection() ?>
 
 <?php $this->section('main') ?>
-<?php $this->renderSection('main') ?>
+<?= $this->renderSection('main') ?>
 <?php $this->endSection() ?>
 
 <?php $this->section('pageScripts') ?>
-<?php $this->renderSection('pageScripts') ?>
+<?= $this->renderSection('pageScripts') ?>
 <?php $this->endSection() ?>

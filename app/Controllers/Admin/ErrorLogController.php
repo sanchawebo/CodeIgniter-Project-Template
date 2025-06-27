@@ -4,7 +4,8 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\Response;
-use Logs\ErrorLogs;
+use Config\Services;
+use Mpr\Logs\ErrorLogs;
 
 class ErrorLogController extends BaseController
 {
@@ -13,7 +14,7 @@ class ErrorLogController extends BaseController
         $logs  = new ErrorLogs();
         $dates = $logs->getLogDatesArray('desc');
 
-        $pager = \Config\Services::pager();
+        $pager = Services::pager();
 
         $page    = (int) ($this->request->getGet('page') ?? 1);
         $perPage = 10;

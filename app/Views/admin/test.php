@@ -11,15 +11,15 @@
 <?= lang('Admin.test.title') ?>
 <?php $this->endSection() ?>
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 <?php $this->section('main'); ?>
 
 <h2>Test Controller:</h2>
 
-<?= frok_hr() ?>
+<hr>
 
 <pre>
-    <?= print_r($data) ?>
+    <?= print_r($data, true) ?>
 </pre>
 
 <?php $this->endSection() ?>

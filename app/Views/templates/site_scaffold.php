@@ -10,7 +10,7 @@
 <?= ucfirst('@:@') . ' | ' . SITE_NAME ?>
 <?php $this->endSection() ?>
 
-<?php $this->extend('templates/layout'); ?>
+<?php $this->extend('templates/layout-page'); ?>
 <?php $this->section('main'); ?>
 
 <?php $this->endSection() ?>

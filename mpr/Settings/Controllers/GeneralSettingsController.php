@@ -1,6 +1,6 @@
 <?php
 
-namespace Settings\Controllers;
+namespace Mpr\Settings\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\RedirectResponse;

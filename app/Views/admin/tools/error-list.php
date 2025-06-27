@@ -14,39 +14,40 @@
 <?= lang('Admin.error-logs.title') ?>
 <?php $this->endSection() ?>
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 <?php $this->section('main'); ?>
 <?php helper('html'); ?>
 <?= link_tag('/assets/css/prism.css') ?>
 
 <?php foreach ($dates as $index => $date): ?>
-<div class="a-accordion" id="errorLogAccordion">
-    <div class="a-accordion__headline"
-        id="collapse<?= $index ?>"
-        data-log-date="<?= $date ?>" data-log-result-loaded="0"
-        data-log-get-url="<?= route_to('single-log', $date) ?>">
-        <h2 class="a-accordion__headline-heading highlight" id="heading<?= $index ?>">
-            <?= $date ?>&mdash;Log
+<div class="accordion mb-3" id="errorLogAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading<?= $index ?>">
+            <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse<?= $index ?>"
+                aria-expanded="false"
+                aria-controls="collapse<?= $index ?>">
+                <span><?= $date ?>&mdash;Log</span>
+                <i class="fa fa-chevron-down ms-2"></i>
+            </button>
         </h2>
-        <button class="a-accordion__headline-button" type="button"
-            aria-expanded="false"
-            aria-controls="collapse<?= $index ?>">
-            <i class="a-icon a-accordion__headline-icon boschicon-bosch-ic-down"
-                title="arrow down"
-            ></i>
-        </button>
-    </div>
-    <div class="a-accordion__content"
-        role="region"
-        aria-labelledby="heading<?= $index ?>">
-        <div class="accordion-body p-0 pt-2 pb-1">
-            <div data-log-spinner-container>
-                <div class="d-flex justify-content-center p-4">
-                    <?= frok_activity_indicator() ?>
+        <div id="collapse<?= $index ?>" class="accordion-collapse collapse"
+            aria-labelledby="heading<?= $index ?>"
+            data-bs-parent="#errorLogAccordion"
+            data-log-date="<?= $date ?>"
+            data-log-result-loaded="0"
+            data-log-get-url="<?= route_to('single-log', $date) ?>">
+            <div class="accordion-body p-0 pt-2 pb-1">
+                <div data-log-spinner-container>
+                    <div class="d-flex justify-content-center p-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 </div>
+                <div data-log-result-container></div>
             </div>
-            <div data-log-result-container></div>
-
         </div>
     </div>
 </div>

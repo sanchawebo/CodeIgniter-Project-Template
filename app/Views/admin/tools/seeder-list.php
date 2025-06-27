@@ -13,32 +13,39 @@
 <?php $this->endSection() ?>
 <!-- Change the html-title in the above section. -->
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 <?php $this->section('main'); ?>
 <?php helper('html'); ?>
 
 <div>
-    <?= frok_notification('warning', 'Be careful when running seeders. Backup db-data if unsure!') ?>
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        <div>
+            Be careful when running seeders. Backup db-data if unsure!
+        </div>
+    </div>
     <h1 class="fs-3">Seed Results:</h1>
     <p id="seed-results">
         None
     </p>
-    <?= frok_hr() ?>
+    <hr>
     <h1 class="fs-4">Seeder Files:</h1>
     
-    <ol class="a-list a-list--num">
+    <ol class="list-group list-group-numbered">
         <?php foreach ($files as $file) : ?>
-        <li class="d-flex align-items-center fs-4">
+        <li class="list-group-item d-flex align-items-center fs-4">
             <div class="ms-3">
-                <p class="fs-6 mb-0 text-secondary">Last modified:
-                    <?= date('d.m.Y, H:i', $file['modifiedDate']) ?>
+                <p class="fs-6 mb-0 text-secondary">
+                    <i class="far fa-clock me-1"></i>
+                    Last modified: <?= date('d.m.Y, H:i', $file['modifiedDate']) ?>
                 </p>
                 <span><?= $file['fileName'] ?></span>
             </div>
             <button hx-get="<?= route_to('seed-single', $file['className']) ?>" hx-target="#seed-results"
                 _="on click set #seed-results.innerHTML to 'Loading...'"
-                class="a-button a-button--primary -without-icon ms-auto">
-                <span class="a-button__label">Run Seeder</span>
+                class="btn btn-primary ms-auto">
+                <i class="fas fa-play me-1"></i>
+                <span>Run Seeder</span>
             </button>
         </li>
         <?php endforeach ?>

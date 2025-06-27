@@ -3,9 +3,9 @@
  * @var string $error
  */
 ?>
-<div class="a-notification a-notification--text -error" role="alert">
-    <i class="a-icon ui-ic-alert-error" title="Error"></i>
-    <div class="a-notification__content">
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+    <i class="fas fa-exclamation-triangle me-2" aria-hidden="true"></i>
+    <div>
         <?= esc($error) ?>
     </div>
 </div>

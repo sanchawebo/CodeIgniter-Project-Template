@@ -12,51 +12,57 @@
 <?= lang('Admin.migrations.title') ?>
 <?php $this->endSection() ?>
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 <?php $this->section('main'); ?>
 <?php helper('html'); ?>
 
 <div>
-    <?= frok_notification('warning', 'Be careful when running migrations. Backup db-data if unsure!') ?>
-    
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        Be careful when running migrations. Backup db-data if unsure!
+    </div>
+
     <h1 class="fs-3">Files:</h1>
     <?php if (! empty($migrations)) : ?>
-        <div class="overflow-x-auto -turquoise">
+        <div class="table-responsive">
             <?php
             $template = [
-                'table_open' => '<table class="m-table">',
+                'table_open' => '<table class="table table-striped table-bordered align-middle">',
             ];
             $table = new CodeIgniter\View\Table($template);
             $table->setHeading(array_keys($migrations[array_key_first($migrations)]));
-    
-            foreach ($migrations as $key) {
-                $table->addRow($key);
+
+            foreach ($migrations as $row) {
+                $table->addRow($row);
             }
-            echo $table->generate() ?>
+            echo $table->generate();
+            ?>
         </div>
-        <div class="m-3 a-link a-link--button">
-            <a href="<?= route_to('migrate-all') ?>" title="Runs all latest Migrations">
+        <div class="my-3">
+            <a href="<?= route_to('migrate-all') ?>" class="btn btn-primary" title="Runs all latest Migrations">
+                <i class="fas fa-play me-1"></i>
                 <span>Migrate latest</span>
             </a>
         </div>
     <?php else : ?>
         <p class="fst-italic">None</p>
     <?php endif; ?>
-    
+
     <h2 class="fs-4 pt-3">Migration History:</h2>
     <?php if (! empty($migrationHistory)) : ?>
-        <div class="overflow-auto">
-        <?php
+        <div class="table-responsive">
+            <?php
             $template = [
-                'table_open' => '<table class="m-table">',
+                'table_open' => '<table class="table table-striped table-bordered align-middle">',
             ];
             $table = new CodeIgniter\View\Table($template);
             $table->setHeading(array_keys($migrationHistory[0] ?? []));
-    
-            foreach ($migrationHistory as $key) {
-                $table->addRow($key);
+
+            foreach ($migrationHistory as $row) {
+                $table->addRow($row);
             }
-            echo $table->generate() ?>
+            echo $table->generate();
+            ?>
         </div>
     <?php else : ?>
         <p class="fst-italic">None</p>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Logs;
+namespace Mpr\Logs;
 
 use CodeIgniter\Files\Exceptions\FileNotFoundException;
 use CodeIgniter\Files\File;
@@ -8,7 +8,7 @@ use CodeIgniter\Files\FileCollection;
 use CodeIgniter\I18n\Time;
 use Config\Logger;
 use InvalidArgumentException;
-use Logs\Class\LogData;
+use Mpr\Logs\Class\LogData;
 use SplFileObject;
 
 class ErrorLogs

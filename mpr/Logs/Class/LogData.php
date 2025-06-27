@@ -1,6 +1,6 @@
 <?php
 
-namespace Logs\Class;
+namespace Mpr\Logs\Class;
 
 class LogData
 {
@@ -10,7 +10,6 @@ class LogData
 
     public function __construct(public readonly string $type, public readonly ?string $dateTime = null)
     {
-
     }
 
     public static function createMissingParentHolder(): self

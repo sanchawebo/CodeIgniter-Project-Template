@@ -1,10 +1,13 @@
 <?php
+
+use CodeIgniter\View\View;
+
 /**
- * @var CodeIgniter\View\View $this
+ * @var View $this
  */
 ?>
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 
 <?php $this->section('pageTitle') ?>
 <?php $this->renderSection('title', true) ?>

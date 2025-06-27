@@ -1,6 +1,6 @@
 <?php
 
-namespace Settings\Config;
+namespace Mpr\Settings\Config;
 
 class Registrar
 {

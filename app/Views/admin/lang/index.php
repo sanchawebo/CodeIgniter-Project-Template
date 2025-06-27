@@ -11,10 +11,10 @@
 <?= lang('Admin.language.title') ?>
 <?php $this->endSection() ?>
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 <?php $this->section('main'); ?>
 
-<div class="e-container">
+<div class="container">
     <div class="d-flex flex-row mb-5">
         <div class="a-link a-link--button-secondary">
             <a href="<?= base_url(route_to('lang-export')) ?>">
@@ -22,7 +22,7 @@
             </a>
         </div>
     </div>
-    <?= frok_hr() ?>
+    <hr>
     <div class="row">
         <?php foreach ($langMap as $lang => $files): ?>
             <div class="col">

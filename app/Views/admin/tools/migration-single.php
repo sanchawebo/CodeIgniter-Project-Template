@@ -13,22 +13,30 @@
 <?php $this->endSection() ?>
 <!-- Change the html-title in the above section. -->
 
-<?php $this->extend('admin/layout'); ?>
+<?php $this->extend('templates/layout-admin'); ?>
 <?php $this->section('main'); ?>
 <?php helper('html'); ?>
 
 <div>
-    <?= frok_link(route_to('migration'), 'Back', 'boschicon-bosch-ic-arrow-left', true, true) ?>
-    <?= frok_hr() ?>
+    <a href="<?= route_to('migration') ?>" class="btn btn-secondary mb-3">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    <hr>
 
     <h2>Single Migration:</h2>
     <?php if ($success) : ?>
-        <?= frok_notification('success', 'Success') ?>
+        <div class="alert alert-success" role="alert">
+            <i class="fas fa-check-circle"></i> Success
+        </div>
     <?php else : ?>
-        <?= frok_notification('error', 'Failed') ?>
+        <div class="alert alert-danger" role="alert">
+            <i class="fas fa-times-circle"></i> Failed
+        </div>
     <?php endif; ?>
     <?php if (isset($errors)) : ?>
-        <p><?= d($errors) ?></p>
+        <div class="alert alert-warning" role="alert">
+            <pre><?= print_r($errors, true) ?></pre>
+        </div>
     <?php endif; ?>
 </div>
 

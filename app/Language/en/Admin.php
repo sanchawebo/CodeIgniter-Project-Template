@@ -11,10 +11,7 @@ return [
         'error-logs' => 'Error Logs',
         'migrations' => 'Migrations',
         'test'       => 'Test',
-        'api'        => 'Priint Api Tests',
         'seeding'    => 'Seeding',
-        'xmlPriint'  => 'Import Categories Test',
-        'xmlTest'    => 'Import MPR-XML Test',
         'back'       => 'Back to ' . SITE_NAME,
     ],
     'dashboard' => [
@@ -42,21 +39,9 @@ return [
         'title'     => 'Seeding',
         'desc'      => 'Run DB-seeder.',
     ],
-    'api' => [
-        'pageTitle' => 'Priint Api Tests | ' . SITE_NAME,
-        'title'     => 'Priint Api Tests',
-    ],
     'test' => [
         'pageTitle' => 'Test | ' . SITE_NAME,
         'title'     => 'Test',
-    ],
-    'xmlPriint' => [
-        'pageTitle' => 'Import Categories Test | ' . SITE_NAME,
-        'title'     => 'Import Categories Test',
-    ],
-    'xmlTest' => [
-        'pageTitle' => 'Import MPR-XML Test | ' . SITE_NAME,
-        'title'     => 'Import MPR-XML Test',
     ],
     'language' => [
         'pageTitle' => 'Languages | ' . SITE_NAME,

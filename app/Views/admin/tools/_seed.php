@@ -9,12 +9,20 @@
 ?>
 <div>
     <?php if ($success) : ?>
-        <?= frok_notification('success', $name . ' succeded') ?>
+        <div class="alert alert-success" role="alert">
+            <?= esc($name) ?> succeeded
+        </div>
     <?php else : ?>
-        <?= frok_notification('error', $name . ' failed') ?>
-        <p>Message:</p>
-        <p class="mb-3"><?= $message ?? '' ?></p>
-        <p>Trace:</p>
-        <p><?= d($trace) ?></p>
+        <div class="alert alert-danger" role="alert">
+            <?= esc($name) ?> failed
+            <?php if (!empty($message)) : ?>
+                <div class="mt-2"><strong>Message:</strong> <?= esc($message) ?></div>
+            <?php endif; ?>
+            <?php if (!empty($trace)) : ?>
+                <div class="mt-2"><strong>Trace:</strong>
+                    <pre class="mb-0"><?= esc(print_r($trace, true)) ?></pre>
+                </div>
+            <?php endif; ?>
+        </div>
     <?php endif; ?>
 </div>
