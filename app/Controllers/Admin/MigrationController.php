@@ -3,25 +3,36 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use CodeIgniter\Database\MigrationRunner;
 use Config\Services;
 use Exception;
 
 class MigrationController extends BaseController
 {
+    /**
+     * @var MigrationRunner
+     */
+    protected $migrationService;
+
+    public function __construct()
+    {
+        $this->migrationService = Services::migrations();
+        $this->migrationService->setNamespace(null);
+    }
+
     public function index()
     {
         $data               = [];
         $data['title']      = 'Migrations';
-        $migrate            = Services::migrations();
-        $data['migrations'] = json_decode(json_encode($migrate->findMigrations()), true);
+        $data['migrations'] = json_decode(json_encode($this->migrationService->findMigrations()), true);
 
         krsort($data['migrations']);
 
         foreach ($data['migrations'] as $key => $value) {
             $method = 'up';
 
-            foreach ($migrate->getHistory() as $history) {
-                if ($migrate->getObjectUid($history) === $data['migrations'][$key]['uid']) {
+            foreach ($this->migrationService->getHistory() as $history) {
+                if ($this->migrationService->getObjectUid($history) === $data['migrations'][$key]['uid']) {
                     $method = 'down';
                     break;
                 }
@@ -40,7 +51,7 @@ class MigrationController extends BaseController
             $button                   = ['migrate/rollback' => $buttonHtml];
             $data['migrations'][$key] = $button + $data['migrations'][$key];
         }
-        $data['migrationHistory'] = $migrate->getHistory();
+        $data['migrationHistory'] = $this->migrationService->getHistory();
 
         foreach ($data['migrationHistory'] as $key) {
             $key->time = date('Y-m-d H:i:s', $key->time);
@@ -53,8 +64,7 @@ class MigrationController extends BaseController
     public function migrateAll()
     {
         try {
-            $migrate = Services::migrations();
-            $migrate->latest();
+            $this->migrationService->latest();
             $data['success'] = true;
         } catch (Exception $exc) {
             $data['success'] = false;
@@ -71,9 +81,7 @@ class MigrationController extends BaseController
         $path      = $data['path'];
 
         try {
-            $migrate = Services::migrations();
-
-            $migrate->force($path, $namespace);
+            $this->migrationService->force($path, $namespace);
             $data['success'] = true;
         } catch (Exception $exc) {
             $data['success'] = false;
